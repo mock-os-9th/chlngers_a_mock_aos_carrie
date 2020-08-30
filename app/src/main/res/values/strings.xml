@@ -1,0 +1,20 @@
+<resources>
+    <string name ="yet_dev_page">미구현된 페이지 입니다.</string>
+    <string name ="yet_dev_func">미구현된 기능 입니다.</string>
+
+    <string name="app_name">challengers</string>
+    <string name="loading">로딩중입니다.</string>
+    <string name="confirm">확인</string>
+    <string name="network_error">네트워크 연결이 원활하지 않습니다.</string>
+    <string name="positive">네</string>
+    <string name="negative">아니오</string>
+
+    <string name="searchItem">탐색</string>
+    <string name="newItem">개설</string>
+    <string name="cameraItem">인증</string>
+    <string name="feedItem">피드</string>
+    <string name="mypageItem">마이페이지</string>
+
+
+
+</resources>
