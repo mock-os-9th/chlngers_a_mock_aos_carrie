@@ -15,6 +15,10 @@
     <string name="feedItem">피드</string>
     <string name="mypageItem">마이페이지</string>
 
+    <string name= "popupTitle_line1">안녕하세요.</string>
+    <string name= "popupTitle_line2">챌린져스 입니다.</string>
+
+
 
 
 </resources>

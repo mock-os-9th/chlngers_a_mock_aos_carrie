@@ -9,8 +9,8 @@ import android.view.MenuItem;
 import com.Carrie.challengersproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+// 액티비티 넘어 올때 로딩 등 있다. base activity 추후에 상속
 public class b_MainActivity extends AppCompatActivity  {
-
     BottomNavigationView bottomNavigationView;
     SearchFragment searchFragment;
     CameraFragment cameraFragment;
@@ -22,6 +22,8 @@ public class b_MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b_main);
         bottomNavigationView = findViewById(R.id.activity_b_bnv);
+
+        bottomNavigationView.setItemIconTintList(null);
 
         searchFragment = new SearchFragment();
         cameraFragment = new CameraFragment();

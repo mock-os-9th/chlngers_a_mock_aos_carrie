@@ -2,28 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/a_searchItem"
-        android:icon="@drawable/ic_search_24dp"
+        android:icon="@drawable/ic_b_search_24dp"
         android:enabled="true"
         android:title="@string/searchItem"/>
     <item
         android:id="@+id/a_newItem"
-        android:icon="@drawable/ic_new_24dp"
+        android:icon="@drawable/ic_b_new_24dp"
         android:enabled="true"
         android:title="@string/newItem"/>
     <item
         android:id="@+id/a_cameraItem"
-        android:icon="@drawable/ic_search_24dp"
+        android:icon="@drawable/ic_b_camera_24dp"
         android:enabled="true"
         android:checked="true"
         android:title="@string/cameraItem"/>
     <item
         android:id="@+id/a_feedItem"
-        android:icon="@drawable/ic_camera_24dp"
+        android:icon="@drawable/ic_b_feed_24dp"
         android:enabled="true"
         android:title="@string/feedItem"/>
     <item
         android:id="@+id/a_mypageItem"
-        android:icon="@drawable/ic_person_24dp"
+        android:icon="@drawable/ic_b_person_24dp"
         android:enabled="true"
         android:title="@string/mypageItem"/>
 
