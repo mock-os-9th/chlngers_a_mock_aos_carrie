@@ -12,9 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
-        <activity android:name=".src.main.a_MainActivity"></activity>
-        <activity android:name=".src.main.b_MainActivity" ></activity>
+        <!--페이스북 메타 데이터-->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_key"/>
 
+        <activity android:name=".src.register.RegisterActivity"></activity>
+        <activity android:name=".src.login.LoginActivity" />
+        <activity android:name=".src.main.a_MainActivity" />
+        <activity android:name=".src.main.b_MainActivity" />
         <activity android:name=".src.splash.splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

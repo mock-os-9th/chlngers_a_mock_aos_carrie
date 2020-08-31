@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorAccent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/login_Ib_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_arrow_back_black_80dp"
+        android:tint="@color/colorPrimary"
+        android:background="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toBottomOf="@id/login_Ib_back"
+        android:scrollbarThumbVertical="@color/colorGray"
+        android:scrollbarSize="3dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.Carrie.challengersproject.src.login.LoginActivity">
+
+            <TextView
+                android:id="@+id/login_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textSize="30sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/login_et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_email"
+                android:textColorHint="@color/colorGray"
+                app:layout_constraintTop_toBottomOf="@id/login_tv_title"
+                android:backgroundTint="@color/colorGray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <EditText
+                android:id="@+id/login_et_pw"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_pw"
+                android:textColorHint="@color/colorGray"
+                android:backgroundTint="@color/colorGray"
+                app:layout_constraintTop_toBottomOf="@id/login_et_email"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <Button
+                android:id="@+id/login_btn_start"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:text="@string/login_start"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/primarycolor_selector"
+                app:layout_constraintTop_toBottomOf="@id/login_et_pw"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/login_btn_start"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/login_tv_find_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/find_email"
+                    android:textColor="@color/colorPrimaryDark"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" | "
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <TextView
+                    android:id="@+id/login_tv_re_pw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/re_pw"
+                    android:textColor="@color/colorPrimaryDark"/>
+            </LinearLayout>
+
+            <!--        페이스북-->
+            <Button
+                android:id="@+id/login_btn_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@drawable/facebookcolor_selector"
+                android:drawableLeft="@drawable/facebookiconjpg"
+                android:drawablePadding="-50dp"
+                android:text="@string/start_facebook"
+                android:textStyle="bold"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+
+                android:paddingLeft="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/login_btn_start"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+ />
+
+            <!--        네이버-->
+            <Button
+                android:id="@+id/login_btn_naver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="@string/start_naver"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/login_btn_facebook"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/navercolor_selector"
+                android:drawableLeft="@drawable/navericon"
+                android:paddingLeft="15dp"
+                android:drawablePadding="-50dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <!--        카카오-->
+            <Button
+                android:id="@+id/login_btn_kakao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="@string/start_kakao"
+                android:textColor="@color/colorKakaoText"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/login_btn_naver"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/kakaocolor_selector"
+                android:drawableLeft="@drawable/kakaoicon"
+                android:paddingLeft="15dp"
+                android:drawablePadding="-50dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginBottom="50dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintTop_toBottomOf="@+id/login_btn_kakao"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

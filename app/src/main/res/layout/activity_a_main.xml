@@ -23,7 +23,6 @@
         android:foregroundGravity="center"
         android:background="@color/colorAccent"
         app:menu="@menu/a_main_bottomnavigationview"
-        app:itemIconTint="@drawable/itemselector"
         app:itemTextColor="@color/colorPrimaryDark"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

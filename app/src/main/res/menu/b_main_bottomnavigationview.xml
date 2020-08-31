@@ -3,23 +3,23 @@
 
     <item
         android:id="@+id/b_searchItem"
-        android:icon="@drawable/ic_b_search_24dp"
+        android:icon="@drawable/ic_c_search_selector"
         android:enabled="true"
         android:checked="true"
         android:title="@string/searchItem"/>
     <item
         android:id="@+id/b_cameraItem"
-        android:icon="@drawable/ic_b_camera_24dp"
+        android:icon="@drawable/ic_c_camera_selector"
         android:enabled="true"
         android:title="@string/cameraItem"/>
     <item
         android:id="@+id/b_feedItem"
-        android:icon="@drawable/ic_b_feed_24dp"
+        android:icon="@drawable/ic_c_feed_selector"
         android:enabled="true"
         android:title="@string/feedItem"/>
     <item
         android:id="@+id/b_mypageItem"
-        android:icon="@drawable/ic_b_person_24dp"
+        android:icon="@drawable/ic_c_person_selector"
         android:enabled="true"
         android:title="@string/mypageItem"/>
 

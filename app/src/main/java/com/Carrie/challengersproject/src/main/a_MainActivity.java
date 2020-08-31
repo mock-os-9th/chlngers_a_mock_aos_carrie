@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import com.Carrie.challengersproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+// 로그인 되어 있을 때 넘어 오는 액티비티
 // 액티비티 넘어 올때 로딩 등 있다. base activity 추후에 상속
 public class a_MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
@@ -33,7 +34,7 @@ public class a_MainActivity extends AppCompatActivity {
 
         // 제일 처음 띄어줄 뷰 세팅
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.activity_b_fl,cameraFragment).commitAllowingStateLoss();
+                .replace(R.id.activity_a_fl,cameraFragment).commitAllowingStateLoss();
 
         // 아이콘 선택시 원하는 프레그먼트 띄우기 - 리스너 추가
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

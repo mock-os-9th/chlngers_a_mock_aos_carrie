@@ -2,25 +2,30 @@ package com.Carrie.challengersproject.src.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
+
 import android.os.Bundle;
 import android.os.Handler;
-
-
+import android.util.Base64;
+import android.util.Log;
 import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.main.a_MainActivity;
 import com.Carrie.challengersproject.src.main.b_MainActivity;
+import java.security.MessageDigest;
 
 
 
 public class splashActivity extends AppCompatActivity {
-
     boolean IsLogin = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
 
         // 5초 후에 화면이 변함함
         Handler hand = new Handler();
@@ -45,4 +50,5 @@ public class splashActivity extends AppCompatActivity {
         },5000);
 
     }
+
 }
