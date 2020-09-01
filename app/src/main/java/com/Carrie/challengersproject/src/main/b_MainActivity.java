@@ -5,13 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.common.view.PopupInfoDialog;
+import com.Carrie.challengersproject.src.register.RegisterActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 // 로그인 되어 있지 않을 때 넘어 오는 액티비티
@@ -22,12 +26,25 @@ public class b_MainActivity extends AppCompatActivity  {
     CameraFragment cameraFragment;
     FeedFragment feedFragment;
     MypageFragment mypageFragment;
+    FloatingActionButton fab;
 
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b_main);
+        fab = findViewById(R.id.activity_b_fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(b_MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+
         bottomNavigationView = findViewById(R.id.activity_b_bnv);
         bottomNavigationView.setItemIconTintList(null);
 

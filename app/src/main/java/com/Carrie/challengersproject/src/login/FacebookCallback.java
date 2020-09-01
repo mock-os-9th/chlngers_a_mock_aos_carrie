@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.social;
+package com.Carrie.challengersproject.src.login;
 
 import android.os.Bundle;
 import android.util.Log;

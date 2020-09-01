@@ -5,6 +5,7 @@
     <color name="colorPrimaryDark">#353636</color>
     <color name="colorAccent">#ffffff</color>
     <color name="colorGray">#A0A0A0</color>
+    <color name="colorGrayPressed">#F2F2F2</color>
     <color name="colorBlack">#000000</color>
     <color name="colorFacebook">#1878F3</color>
     <color name="colorFacebookPressed">#D5F1FF</color>
@@ -13,6 +14,7 @@
     <color name="colorKakao">#F9E000</color>
     <color name="colorKakaoPressed">#FFFFCE</color>
     <color name="colorKakaoText">#391C1C</color>
+    <color name="colorConfirmGreen">#2e856e</color>
 
 
 

@@ -21,7 +21,7 @@ public class SimpleMessageDialog extends Dialog implements View.OnClickListener 
     private String mBtnText;
     private Context mContext;
     private TextView mTextViewMessage;
-    private Button mBtnConfirm;
+    private TextView mBtnConfirm;
 
     private OnClickListener onClickListener;
 

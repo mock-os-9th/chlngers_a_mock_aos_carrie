@@ -1,9 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorAccent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.Carrie.challengersproject.src.register.RegisterActivity">
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/Register_Ib_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_arrow_back_black_80dp"
+        android:tint="@color/colorPrimary"
+        android:background="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:background="@color/colorAccent"
+        android:scrollbarSize="3dp"
+        android:scrollbarThumbVertical="@color/colorGray"
+        app:layout_constraintTop_toBottomOf="@id/Register_Ib_back">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.Carrie.challengersproject.src.login.LoginActivity">
+
+            <TextView
+                android:id="@+id/Register_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/register_title"
+                android:textColor="@color/colorBlack"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/Register_et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="15dp"
+                android:backgroundTint="@color/colorGray"
+                android:hint="@string/enter_email"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Register_tv_title" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/Register_fb_company_or_not"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="@+id/Register_et_email"
+                app:layout_constraintTop_toTopOf="@+id/Register_et_email"
+                app:layout_constraintRight_toRightOf="@+id/Register_et_email"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/graycolor_selector"
+                android:text="@string/register_company_or_not"
+                android:textColor="@color/colorAccent" />
+
+
+
+            <EditText
+                android:id="@+id/Register_et_pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:backgroundTint="@color/colorGray"
+                android:hint="@string/register_enter_pw"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Register_et_email" />
+
+            <EditText
+                android:id="@+id/Register_et_pw_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:backgroundTint="@color/colorGray"
+                android:hint="@string/register_confirm_pw"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Register_et_pw" />
+
+            <Button
+                android:id="@+id/Register_btn_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/graycolor_selector"
+                android:text="@string/register_next"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Register_et_pw_confirm" />
+
+            <TextView
+                android:id="@+id/Register_tv_btn_emial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Register_btn_start"
+                android:text="@string/register_with_email"
+                android:textColor="@color/colorGray"/>
+
+
+            <!--        페이스북-->
+            <Button
+                android:id="@+id/Register_btn_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/facebookcolor_selector"
+                android:drawableLeft="@drawable/facebookiconjpg"
+                android:drawablePadding="-50dp"
+                android:paddingLeft="15dp"
+                android:text="@string/start_facebook"
+                android:textSize="16sp"
+
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Register_btn_start" />
+            />
+
+            <!--        네이버-->
+            <Button
+                android:id="@+id/Register_btn_naver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/navercolor_selector"
+                android:drawableLeft="@drawable/navericon"
+                android:drawablePadding="-50dp"
+                android:paddingLeft="15dp"
+                android:text="@string/start_naver"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Register_btn_facebook" />
+
+            <!--        카카오-->
+            <com.kakao.usermgmt.LoginButton
+                android:id="@+id/Register_btn_kakao_gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Register_btn_naver" />
+
+            <Button
+                android:id="@+id/Register_btn_kakao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/kakaocolor_selector"
+                android:drawableLeft="@drawable/kakaoicon"
+                android:drawablePadding="-50dp"
+                android:paddingLeft="15dp"
+                android:text="@string/start_kakao"
+                android:textColor="@color/colorKakaoText"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Register_btn_naver" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Register_btn_kakao" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

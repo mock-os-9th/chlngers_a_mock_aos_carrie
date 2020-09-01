@@ -1,6 +1,7 @@
 <resources>
 
     <string name="facebook_app_key">307892630277765</string>
+    <string name="kakao_app_key">8a8535b0853850c96b32ec19117478db</string>
 
     <string name="yet_dev_page">미구현된 페이지 입니다.</string>
     <string name="yet_dev_func">미구현된 기능 입니다.</string>
@@ -9,6 +10,9 @@
     <string name="loading">로딩중입니다.</string>
     <string name="confirm">확인</string>
     <string name="network_error">네트워크 연결이 원활하지 않습니다.</string>
+    <string name="login_error">로그인 도중 오류가 발생했습니다.</string>
+    <string name="session_error">세션이 닫혔습니다. 다시 시도해주세요.</string>
+
     <string name="positive">네</string>
     <string name="negative">아니오</string>
 
@@ -48,7 +52,17 @@
     <string name="start_naver">네이버로 시작하기</string>
     <string name="start_kakao">카카오로 시작하기</string>
 
+    <string name="login_empty_email">이메일을 입력해 주세요.</string>
+    <string name="login_wrong_email_form">이메일 형식이 올바르지 않습니다.</string>
+    <string name="login_no_match_user">해당 이메일로 가입된 유저가 없습니다. 가입을 하신 경우 카카오톡 플러스친구 @챌린져스, 혹은 supportchlngers.com으로 문의주시면 답변 드리겠습니다.</string>
 
+    <string name="b_fab_text">가입/로그인</string>
 
+    <string name="register_title">회원가입</string>
+    <string name="register_company_or_not">기업회원</string>
+    <string name="register_enter_pw">비밀번호 입력 (영문, 숫자 포함 8자리)</string>
+    <string name="register_confirm_pw">비밀번호 확인</string>
+    <string name="register_next">다음</string>
+    <string name="register_with_email">이메일로 로그인</string>
 
 </resources>

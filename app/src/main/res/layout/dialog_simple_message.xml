@@ -3,43 +3,57 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center_horizontal"
+    android:background="@color/colorAccent"
+    android:layout_gravity="center"
     android:layout_width="300dp"
-    android:layout_height="160dp"
-    android:background="@drawable/background_round_shape_white">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/dialog_simple_message_tv_desc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
         android:gravity="center"
         android:includeFontPadding="false"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorBlack"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@id/dialog_simple_message_tv_positive"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
         tools:text="Description" />
 
-    <Button
+    <TextView
         android:id="@+id/dialog_simple_message_tv_positive"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_bottom_round_primary_color"
-        android:gravity="center"
-        android:includeFontPadding="false"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_simple_message_tv_desc"
         android:text="@string/confirm"
-        android:textColor="@android:color/white"
-        android:textSize="17sp"
+        android:textSize="14sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/colorConfirmGreen"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/dialog_simple_message_tv_positive"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/background_bottom_round_primary_color"-->
+<!--        android:gravity="center"-->
+<!--        android:includeFontPadding="false"-->
+<!--        android:paddingTop="12dp"-->
+<!--        android:paddingBottom="12dp"-->
+<!--        android:text="@string/confirm"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textSize="17sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
