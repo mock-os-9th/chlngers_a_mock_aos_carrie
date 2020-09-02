@@ -65,4 +65,27 @@
     <string name="register_next">다음</string>
     <string name="register_with_email">이메일로 로그인</string>
 
+    <string name="mypage_title">마이 페이지</string>
+    <string name="mypage_nickname">닉네임</string>
+    <string name="mypage_cash">캐시 0원</string>
+    <string name="mapage_wincash">상금 0원</string>
+    <string name="mypage_level">등급</string>
+    <string name="mypage_followers">팔로워</string>
+    <string name="mypage_follwing">팔로잉</string>
+    <string name="mypage_favorite">나의 관심분야</string>
+    <string name="mypage_seechallege">챌린지보기></string>
+    <string name="mypage_getbadge">획득뱃지</string>
+    <string name="mypage_showdetail">자세히보기></string>
+    <string name="mypage_gethabit">획득습관</string>
+    <string name="mypage_gethabit_strength">역량</string>
+    <string name="mypage_gethabit_health">건강</string>
+    <string name="mypage_gethabit_relationship">관계</string>
+    <string name="mypage_gethabit_asset">자산</string>
+    <string name="mypage_gethabit_daily">생활</string>
+    <string name="mypage_gethabit_hobby">취미</string>
+    <string name="mypage_write_everyday">매일 기록</string>
+    <string name="mypage_see_report">통계보기></string>
+
+
+
 </resources>
