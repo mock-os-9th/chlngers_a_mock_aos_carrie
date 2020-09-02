@@ -54,14 +54,13 @@ dependencies {
 
     // add facebook sdk
     implementation 'com.facebook.android:facebook-login:[5,6)'
-//
-//    // add naver sdk
-//    implementation 'com.naver.nid:naveridlogin-android-sdk:4.2.6'
-//    implementation files ('libs/naveridlogin_android_sdk_4.2.6.aar')
-//    implementation 'com.android.support:appcompat-v7:29.0.0'
-//    implementation 'com.android.support:support-core-utils:29.0.0'
-//    implementation 'com.android.support:customtabs:29.0.0'
-//    implementation 'com.android.support:support-v4:29.0.0'
+
+    // add naver sdk
+    implementation files ('libs/naveridlogin_android_sdk_4.2.6.aar')
+    implementation 'com.android.support:appcompat-v7:29.0.0'
+    implementation 'com.android.support:support-core-utils:29.0.0'
+    implementation 'com.android.support:customtabs:29.0.0'
+    implementation 'com.android.support:support-v4:29.0.0'
 
     // kakao
     implementation 'com.kakao.sdk:usermgmt:1.16.0'

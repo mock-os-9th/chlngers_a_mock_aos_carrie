@@ -2,7 +2,9 @@ package com.Carrie.challengersproject.src.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,9 +24,11 @@ public class RegisterActivity extends AppCompatActivity {
     private Button kakao_login;
 
     private TextView email_login;
-    private ExtendedFloatingActionButton company_or_not;
+//    private ExtendedFloatingActionButton company_or_not;
+    boolean IsCompany =false;
 
-    @Override
+    // 회원가입 및 로그인 성공시 a_ㅡMainActivity로
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
@@ -39,8 +43,21 @@ public class RegisterActivity extends AppCompatActivity {
         kakao_login = findViewById(R.id.Register_btn_kakao);
 
         email_login = findViewById(R.id.Register_tv_btn_emial);
-        company_or_not = findViewById(R.id.Register_fb_company_or_not);
+//        company_or_not = findViewById(R.id.Register_fb_company_or_not);
 
-
+//        company_or_not.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (IsCompany == false)
+//                {
+//                    IsCompany=true;
+//                    company_or_not.setBackgroundTintList(getResources().getColorStateList(R.color.colorPrimary));
+//                }
+//                else
+//                {
+//                    IsCompany=false;
+//                }
+//            }
+//        });
     }
 }

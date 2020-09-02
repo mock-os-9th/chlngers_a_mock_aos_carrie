@@ -19,10 +19,12 @@ public class KakaoApp extends Application {
 
     private static class KakaoSDKAdapter extends KakaoAdapter {
 
+        // 카카오 로그인 세션 불러올 때 설정값 설정 부분
         public ISessionConfig getSessionConfig() {
             return new ISessionConfig() {
                 @Override
                 public AuthType[] getAuthTypes() {
+                    //로그인 방식 지정 하는 부분
                     return new AuthType[]{AuthType.KAKAO_LOGIN_ALL};
                 }
 
@@ -42,6 +44,7 @@ public class KakaoApp extends Application {
                     return ApprovalType.INDIVIDUAL;
                 }
 
+                // 다음 번 다시 로그인 시 email 폼을 누르면 이전에 입력했던 이메일 나타난다.
                 @Override
                 public boolean isSaveFormData() {
                     return true;

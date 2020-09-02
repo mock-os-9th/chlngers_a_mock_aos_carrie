@@ -49,9 +49,9 @@
                 android:id="@+id/Register_et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginTop="70dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="25dp"
                 android:backgroundTint="@color/colorGray"
                 android:hint="@string/enter_email"
                 android:textColor="@color/colorBlack"
@@ -60,18 +60,18 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/Register_tv_title" />
 
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/Register_fb_company_or_not"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/Register_et_email"
-                app:layout_constraintTop_toTopOf="@+id/Register_et_email"
-                app:layout_constraintRight_toRightOf="@+id/Register_et_email"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/graycolor_selector"
-                android:text="@string/register_company_or_not"
-                android:textColor="@color/colorAccent" />
+<!--            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+<!--                android:id="@+id/Register_fb_company_or_not"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/Register_et_email"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/Register_et_email"-->
+<!--                app:layout_constraintRight_toRightOf="@+id/Register_et_email"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:background="@drawable/graycolor_selector"-->
+<!--                android:text="@string/register_company_or_not"-->
+<!--                android:textColor="@color/colorAccent" />-->
 
 
 
@@ -79,9 +79,9 @@
                 android:id="@+id/Register_et_pw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="25dp"
                 android:backgroundTint="@color/colorGray"
                 android:hint="@string/register_enter_pw"
                 android:textColor="@color/colorBlack"
@@ -94,9 +94,9 @@
                 android:id="@+id/Register_et_pw_confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="25dp"
                 android:backgroundTint="@color/colorGray"
                 android:hint="@string/register_confirm_pw"
                 android:textColor="@color/colorBlack"
@@ -109,9 +109,9 @@
                 android:id="@+id/Register_btn_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="30dp"
                 android:background="@drawable/graycolor_selector"
                 android:text="@string/register_next"
                 android:textColor="@color/colorAccent"
@@ -138,9 +138,9 @@
                 android:id="@+id/Register_btn_facebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="60dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="30dp"
                 android:background="@drawable/facebookcolor_selector"
                 android:drawableLeft="@drawable/facebookiconjpg"
                 android:drawablePadding="-50dp"
@@ -159,9 +159,9 @@
                 android:id="@+id/Register_btn_naver"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="30dp"
                 android:background="@drawable/navercolor_selector"
                 android:drawableLeft="@drawable/navericon"
                 android:drawablePadding="-50dp"
@@ -187,9 +187,9 @@
                 android:id="@+id/Register_btn_kakao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/kakaocolor_selector"
                 android:drawableLeft="@drawable/kakaoicon"
