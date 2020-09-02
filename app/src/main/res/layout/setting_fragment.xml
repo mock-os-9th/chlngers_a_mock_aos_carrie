@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <TextView
+        android:id="@+id/setting_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="15dp"/>
+
+    <ImageButton
+        android:id="@+id/setting_ib_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_chevron_left_black_24dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@id/setting_tv_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="15dp" />
+
+    <View
+        android:id="@+id/setting_empty_1"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintTop_toBottomOf="@id/setting_tv_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/setting_sv_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/setting_empty_1"
+        android:background="@color/colorGrayPressed">
+
+        <LinearLayout
+            android:id="@+id/setting_ll_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/setting_btn_change_profile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/setting_change_profile"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawablePadding="200dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:gravity="center|center_vertical"
+                app:elevation="0dp"
+                android:elevation="0dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <Button
+
+                android:id="@+id/setting_btn_fit_setting"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/setting_fit_setting"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawablePadding="210dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:gravity="center|center_vertical"
+                app:elevation="0dp"
+                android:elevation="0dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <Button
+                android:id="@+id/setting_btn_announce"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/setting_announce"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawablePadding="210dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:gravity="center|center_vertical"
+                app:elevation="0dp"
+                android:elevation="0dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <Button
+                android:id="@+id/setting_btn_frequent_qestion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/setting_frequent_qestion"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawablePadding="190dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:gravity="center|center_vertical"
+                app:elevation="0dp"
+                android:elevation="0dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <Button
+                android:id="@+id/setting_btn_complain_suggest_topic"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/setting_complain_suggest_topic"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawablePadding="120dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:gravity="center|center_vertical"
+                app:elevation="0dp"
+                android:elevation="0dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <Button
+                android:id="@+id/setting_btn_vote_challenge"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/setting_vote_challenge"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawablePadding="170dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:gravity="center|center_vertical"
+                app:elevation="0dp"
+                android:elevation="0dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <Button
+                android:id="@+id/setting_btn_setting_result_Declaim"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/setting_result_Declaim"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawablePadding="170dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:gravity="center|center_vertical"
+                app:elevation="0dp"
+                android:elevation="0dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <Button
+                android:id="@+id/setting_btn_invite_friends_get_heart"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/setting_invite_friends_get_heart"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawablePadding="130dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:gravity="center|center_vertical"
+                app:elevation="0dp"
+                android:elevation="0dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <Button
+                android:id="@+id/setting_btn_setting_guide"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/setting_guide"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:drawablePadding="180dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:gravity="center|center_vertical"
+                app:elevation="0dp"
+                android:elevation="0dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrayPressed"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/setting_logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:elevation="0dp"
+        android:elevation="0dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
