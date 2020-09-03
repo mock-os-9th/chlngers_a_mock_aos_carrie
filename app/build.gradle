@@ -11,6 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -71,6 +72,9 @@ dependencies {
 
     //spiderchart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // circleimageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 
 }
