@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorAccent"
+    android:layout_width="wrap_content"
+    android:padding="3dp"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/search_recommand_item_fl"
+        android:layout_width="170dp"
+        android:layout_height="110dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+        <ImageView
+            android:id="@+id/search_recommand_item_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/search_recommand_item_btn_until"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:text="@string/search_until_today"
+            android:background="@color/colorPrimary"
+            android:textSize="10sp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/search_recommand_item_bookmark"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/bookmark_selector"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/search_recommand_item_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="제태크 영상보기"
+        app:layout_constraintTop_toBottomOf="@+id/search_recommand_item_fl"
+        app:layout_constraintLeft_toLeftOf="@id/search_recommand_item_fl"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/search_recommand_item_tv_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/search_recommand_item_tv_title"
+        app:layout_constraintTop_toBottomOf="@id/search_recommand_item_tv_title"
+        android:textSize="10sp"
+        android:text="4.99"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_star_black_24dp"/>
+
+    <TextView
+        android:id="@+id/search_recommand_item_tv_now_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/search_recommand_item_tv_start"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toTopOf="@id/search_recommand_item_tv_start"
+        android:text="현재 118명 신청"
+        android:textSize="10sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/search_recommand_item_tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/search_recommand_item_tv_now_people"
+        app:layout_constraintLeft_toLeftOf="@id/search_recommand_item_tv_title"
+        android:background="@color/colorGrayPressed"
+        android:text=" 8/31/월 - 9/13 일 "
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="9sp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/search_recommand_item_tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toTopOf="@id/search_recommand_item_tv_date"
+        app:layout_constraintLeft_toRightOf="@id/search_recommand_item_tv_date"
+        android:layout_marginLeft="3dp"
+        android:background="@color/colorGrayPressed"
+        android:text=" 2주 "
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="9sp" />
+
+    <TextView
+        android:id="@+id/search_recommand_item_tv_cycle"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toTopOf="@id/search_recommand_item_tv_duration"
+        app:layout_constraintLeft_toRightOf="@id/search_recommand_item_tv_duration"
+        android:layout_marginLeft="3dp"
+        android:background="@color/colorGrayPressed"
+        android:text=" 주 3일 "
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="9sp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

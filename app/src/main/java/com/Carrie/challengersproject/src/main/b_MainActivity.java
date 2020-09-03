@@ -22,11 +22,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 // 액티비티 넘어 올때 로딩 등 있다. base activity 추후에 상속
 public class b_MainActivity extends AppCompatActivity  {
     BottomNavigationView bottomNavigationView;
-    SearchFragment searchFragment;
+    b_SearchFragment searchFragment;
     CameraFragment cameraFragment;
     FeedFragment feedFragment;
-    MypageFragment mypageFragment;
+    b_MypageFragment mypageFragment;
     FloatingActionButton fab;
+
+    SettingFragment settingFragment;
+    ChangeProfileFragment changeFragment;
+    FollowerFragment followerFragment;
+    FollowingFragment followingFragment;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -48,10 +53,14 @@ public class b_MainActivity extends AppCompatActivity  {
         bottomNavigationView = findViewById(R.id.activity_b_bnv);
         bottomNavigationView.setItemIconTintList(null);
 
-        searchFragment = new SearchFragment();
+        searchFragment = new b_SearchFragment();
         cameraFragment = new CameraFragment();
         feedFragment = new FeedFragment();
-        mypageFragment = new MypageFragment();
+        mypageFragment = new b_MypageFragment();
+        settingFragment = new SettingFragment();
+        changeFragment = new ChangeProfileFragment();
+        followerFragment = new FollowerFragment();
+        followingFragment = new FollowingFragment();
 
        // 팝업 - 이 팝업 안에서 다른 팝업으로 넘어간다.
         PopupInfoDialog popupInfoDialog = new PopupInfoDialog(b_MainActivity.this);
@@ -92,5 +101,35 @@ public class b_MainActivity extends AppCompatActivity  {
                 }
             }
         });
+
+
+    }
+
+    public void onChangeFragment(int index)
+    {
+        if(index == 5)
+        {
+            // 5번일 때는 setting
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,settingFragment).commitAllowingStateLoss();
+        }
+        if(index == 6)
+        {
+            // 6번일 때는  Mypage로
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,mypageFragment).commitAllowingStateLoss();
+        }
+        if(index == 7)
+        {
+            // 7번일 때는 changeprofile로
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,changeFragment).commitAllowingStateLoss();
+        }
+        if(index == 8)
+        {
+            // 7번일 때는 follow 프레그 먼트
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,followerFragment).commitAllowingStateLoss();
+        }
+        if(index == 9)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,followingFragment).commitAllowingStateLoss();
+        }
     }
 }

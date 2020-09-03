@@ -54,6 +54,7 @@
 
     <string name="login_empty_email">이메일을 입력해 주세요.</string>
     <string name="login_wrong_email_form">이메일 형식이 올바르지 않습니다.</string>
+    <string name="login_password_length">비밀번호는 8자리 이상으로 해주세요.</string>
     <string name="login_no_match_user">해당 이메일로 가입된 유저가 없습니다. 가입을 하신 경우 카카오톡 플러스친구 @챌린져스, 혹은 supportchlngers.com으로 문의주시면 답변 드리겠습니다.</string>
 
     <string name="b_fab_text">가입/로그인</string>
@@ -112,4 +113,12 @@
 
     <string name="to_follow">팔로우</string>
     <string name="follower_recommend">회원님을 위한 추천</string>
+
+    <string name="search_what_do_you_want_habit">어떤 습관을 원하시나요?</string>
+    <string name="search_msg1">님에게 필요한</string>
+    <string name="search_msg2">좋은 습관을 추천해요.</string>
+    <string name="search_show_all">전체보기</string>
+    <string name="search_until_today">오늘 마감</string>
+    <string name="search_until_tomorrow">내일 마감</string>
+
 </resources>

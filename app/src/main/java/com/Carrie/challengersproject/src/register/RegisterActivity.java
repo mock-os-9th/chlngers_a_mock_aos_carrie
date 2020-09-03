@@ -2,6 +2,8 @@ package com.Carrie.challengersproject.src.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -12,8 +14,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.Carrie.challengersproject.R;
+import com.Carrie.challengersproject.src.common.view.SimpleMessageDialog;
+import com.Carrie.challengersproject.src.login.LoginActivity;
 import com.Carrie.challengersproject.src.main.b_MainActivity;
+import com.facebook.CallbackManager;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.kakao.usermgmt.LoginButton;
+import com.nhn.android.naverlogin.OAuthLogin;
+import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -28,6 +36,17 @@ public class RegisterActivity extends AppCompatActivity {
     private ImageButton back_btn;
 
     private TextView email_login;
+
+
+
+    private com.facebook.login.widget.LoginButton facebook_invisible_btn;
+    private LoginButton kakao_invisible_btn;
+
+    private LoginActivity.FacebookCallback mFacebookCallback;
+//    private LoginActivity.KakaoCallback kakaoCallback;
+    private CallbackManager mCallbackManager;
+
+    static Context context;
 //    private ExtendedFloatingActionButton company_or_not;
     boolean IsCompany =false;
 
@@ -47,6 +66,69 @@ public class RegisterActivity extends AppCompatActivity {
         kakao_login = findViewById(R.id.Register_btn_kakao);
 
         email_login = findViewById(R.id.Register_tv_btn_emial);
+
+
+       final String user_pw_str = user_pw.getText().toString();
+       final String user_confirm_pw_str = user_pw.getText().toString();
+       final String email_empty_alert = getString(R.string.login_empty_email);
+       final String confirm_text = getString(R.string.confirm);
+       final String emial_wrong_alert = getString(R.string.login_wrong_email_form);
+       final String pw_lenth_alert = getString(R.string.login_password_length);
+
+       // 입력받은 로그인 정보 처리
+       next.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               String user_email_str = user_email.getText().toString();
+               if(user_pw_str.length() < 8)
+               {
+                   SimpleMessageDialog simpleMessageDialog = new SimpleMessageDialog.Builder(RegisterActivity.this)
+                           .setMessage(pw_lenth_alert)
+                           .setButtonText(confirm_text)
+                           .setOnClickListener(new SimpleMessageDialog.OnClickListener() {
+                               @Override
+                               public void onClick(Dialog dialog) {
+                                   dialog.dismiss();
+                               }
+                           }).build();
+                   simpleMessageDialog.show();
+               }
+               // 이메일 입력해주세요
+               if (user_email_str.equals("")) {
+                   SimpleMessageDialog simpleMessageDialog = new SimpleMessageDialog.Builder(RegisterActivity.this)
+                           .setMessage(email_empty_alert)
+                           .setButtonText(confirm_text)
+                           .setOnClickListener(new SimpleMessageDialog.OnClickListener() {
+                               @Override
+                               public void onClick(Dialog dialog) {
+                                   dialog.dismiss();
+                               }
+                           }).build();
+                   simpleMessageDialog.show();
+               }
+               // 이메일 형식이 올바르지 않습니다
+               else if (!(user_email_str.contains("@"))) {
+                   SimpleMessageDialog simpleMessageDialog = new SimpleMessageDialog.Builder(RegisterActivity.this)
+                           .setMessage(emial_wrong_alert)
+                           .setButtonText(confirm_text)
+                           .setOnClickListener(new SimpleMessageDialog.OnClickListener() {
+                               @Override
+                               public void onClick(Dialog dialog) {
+                                   dialog.dismiss();
+                               }
+                           }).build();
+                   simpleMessageDialog.show();
+               }
+
+               // 해당 이메일로 가이된 유저가~~~
+               else if (!(user_email_str.equals("")) && !(user_pw_str.equals(""))) {
+                   // 해당 이메일과 비밀번호 회원 정보에서 조회 후 있으면 after main activity 로,
+                   // 없으면 SimpleMessageDialog 띄우기기
+               }
+           }
+       });
+
+
 
        back_btn= findViewById(R.id.Register_Ib_back);
        back_btn.setOnClickListener(new View.OnClickListener() {
