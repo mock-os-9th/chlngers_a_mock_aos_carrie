@@ -1,8 +1,6 @@
-package com.Carrie.challengersproject.src.main;
+package com.Carrie.challengersproject.src.main.before_login;
 
 import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,16 +13,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.Carrie.challengersproject.R;
-import com.github.mikephil.charting.charts.RadarChart;
 
-public class MypageFragment extends Fragment  {
+public class b_MypageFragment extends Fragment  {
 
     ViewGroup viewGroup;
-    a_MainActivity mainActivity;
+    b_MainActivity mainActivity;
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        mainActivity = (a_MainActivity)getActivity();
+        mainActivity = (b_MainActivity)getActivity();
     }
 
     @Override

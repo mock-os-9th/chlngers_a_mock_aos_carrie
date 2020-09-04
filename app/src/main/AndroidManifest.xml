@@ -23,8 +23,8 @@
 
         <activity android:name=".src.register.RegisterActivity" />
         <activity android:name=".src.login.LoginActivity" />
-        <activity android:name=".src.main.a_MainActivity" />
-        <activity android:name=".src.main.b_MainActivity" />
+        <activity android:name=".src.main.after_login.a_MainActivity" />
+        <activity android:name=".src.main.before_login.b_MainActivity" />
         <activity android:name=".src.splash.splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

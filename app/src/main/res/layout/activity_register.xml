@@ -60,18 +60,17 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/Register_tv_title" />
 
-<!--            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
-<!--                android:id="@+id/Register_fb_company_or_not"-->
-<!--                android:layout_width="80dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/Register_et_email"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/Register_et_email"-->
-<!--                app:layout_constraintRight_toRightOf="@+id/Register_et_email"-->
-<!--                android:layout_marginRight="10dp"-->
-<!--                android:layout_marginBottom="10dp"-->
-<!--                android:background="@drawable/graycolor_selector"-->
-<!--                android:text="@string/register_company_or_not"-->
-<!--                android:textColor="@color/colorAccent" />-->
+            <TextView
+                android:id="@+id/Register_tv_alert_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/Register_et_email"
+                app:layout_constraintLeft_toLeftOf="@id/Register_et_email"
+                android:text=""
+                android:textColor="@color/colorGray"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"/>
+
 
 
 
@@ -80,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="35dp"
                 android:layout_marginRight="25dp"
                 android:backgroundTint="@color/colorGray"
                 android:hint="@string/register_enter_pw"
@@ -90,12 +89,25 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/Register_et_email" />
 
+            <TextView
+                android:id="@+id/Register_tv_alert_pw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/Register_et_pw"
+                app:layout_constraintLeft_toLeftOf="@id/Register_et_pw"
+                android:text=""
+                android:textColor="@color/colorGray"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"/>
+
+
+
             <EditText
                 android:id="@+id/Register_et_pw_confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="35dp"
                 android:layout_marginRight="25dp"
                 android:backgroundTint="@color/colorGray"
                 android:hint="@string/register_confirm_pw"
@@ -105,12 +117,23 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/Register_et_pw" />
 
+            <TextView
+                android:id="@+id/Register_tv_alert_pw_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/Register_et_pw_confirm"
+                app:layout_constraintLeft_toLeftOf="@id/Register_et_pw_confirm"
+                android:text=""
+                android:textColor="@color/colorGray"
+                android:layout_marginLeft="5dp"
+                android:textSize="12sp"/>
+
             <Button
                 android:id="@+id/Register_btn_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/graycolor_selector"
                 android:text="@string/register_next"

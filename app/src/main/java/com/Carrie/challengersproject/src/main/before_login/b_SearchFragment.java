@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.main;
+package com.Carrie.challengersproject.src.main.before_login;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,24 +13,25 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Carrie.challengersproject.BaseActivity;
 import com.Carrie.challengersproject.R;
+import com.Carrie.challengersproject.src.main.search.Challenge_Adapter;
+import com.Carrie.challengersproject.src.main.search.Challenge_Item;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class SearchFragment extends Fragment {
+public class b_SearchFragment extends Fragment {
     ViewGroup viewGroup;
     FloatingActionButton fab;
 
-    a_MainActivity mainActivity;
+    b_MainActivity mainActivity;
     private ArrayList<Challenge_Item> mArrayList;
     private Challenge_Adapter mAdapter;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        mainActivity = (a_MainActivity) getActivity();
+        mainActivity = (b_MainActivity) getActivity();
     }
 
     @Override

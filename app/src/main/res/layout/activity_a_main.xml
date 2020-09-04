@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context="com.Carrie.challengersproject.src.main.a_MainActivity">
+    tools:context="com.Carrie.challengersproject.src.main.after_login.a_MainActivity">
 
     <FrameLayout
         android:id="@+id/activity_a_fl"

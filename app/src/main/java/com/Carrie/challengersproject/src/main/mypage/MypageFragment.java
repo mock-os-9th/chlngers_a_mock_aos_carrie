@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.main;
+package com.Carrie.challengersproject.src.main.mypage;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,15 +13,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.Carrie.challengersproject.R;
+import com.Carrie.challengersproject.src.main.after_login.a_MainActivity;
 
-public class b_MypageFragment extends Fragment  {
+public class MypageFragment extends Fragment  {
 
     ViewGroup viewGroup;
-    b_MainActivity mainActivity;
+    a_MainActivity mainActivity;
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        mainActivity = (b_MainActivity)getActivity();
+        mainActivity = (a_MainActivity)getActivity();
     }
 
     @Override

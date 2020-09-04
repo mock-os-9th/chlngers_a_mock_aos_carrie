@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.main;
+package com.Carrie.challengersproject.src.main.search;
 
 public class Challenge_Item {
     private String Img_url;

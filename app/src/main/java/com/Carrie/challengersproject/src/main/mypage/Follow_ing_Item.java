@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.main;
+package com.Carrie.challengersproject.src.main.mypage;
 
 public class Follow_ing_Item {
     private String profile_img_url;

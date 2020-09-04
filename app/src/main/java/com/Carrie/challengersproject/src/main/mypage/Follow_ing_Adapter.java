@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.main;
+package com.Carrie.challengersproject.src.main.mypage;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,8 +16,6 @@ import com.Carrie.challengersproject.R;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Follow_ing_Adapter extends RecyclerView.Adapter<Follow_ing_Adapter.Follow_ing_ViewHolder>
 {

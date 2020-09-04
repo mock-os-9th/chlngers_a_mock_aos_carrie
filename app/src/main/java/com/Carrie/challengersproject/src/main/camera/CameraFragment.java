@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.main;
+package com.Carrie.challengersproject.src.main.camera;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,13 +11,13 @@ import androidx.fragment.app.Fragment;
 
 import com.Carrie.challengersproject.R;
 
-public class FeedFragment extends Fragment {
+public class CameraFragment extends Fragment {
     ViewGroup viewGroup;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        viewGroup = (ViewGroup) inflater.inflate(R.layout.feed_fragment,container,false);
+        viewGroup = (ViewGroup) inflater.inflate(R.layout.camera_fragment,container,false);
         return viewGroup;
     }
 }
