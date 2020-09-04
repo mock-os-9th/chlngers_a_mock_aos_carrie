@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".src.login.resetpasswordActivity" />
-        <activity android:name=".src.login.findemailActivity" /> <!-- 페이스북 메타 데이터 -->
+        <activity android:name=".src.login.reset_pw.ResetPwActivity" />
+        <activity android:name=".src.login.find_email.FindEmailActivity" /> <!-- 페이스북 메타 데이터 -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_key" />

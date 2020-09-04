@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,8 +14,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.Carrie.challengersproject.BaseActivity;
 import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.common.view.SimpleMessageDialog;
+import com.Carrie.challengersproject.src.login.interfaces.LoginActivityView;
 import com.Carrie.challengersproject.src.main.after_login.a_MainActivity;
 import com.Carrie.challengersproject.src.main.before_login.b_MainActivity;
 import com.facebook.CallbackManager;
@@ -43,7 +46,13 @@ import org.json.JSONObject;
 
 import java.util.Arrays;
 
-public class LoginActivity extends AppCompatActivity {
+import static com.Carrie.challengersproject.ApplicationClass.TAG;
+import static com.Carrie.challengersproject.ApplicationClass.X_ACCESS_TOKEN;
+import static com.Carrie.challengersproject.ApplicationClass.sSharedPreferences;
+import static com.Carrie.challengersproject.ApplicationClass.usertempToken;
+
+public class LoginActivity extends BaseActivity implements LoginActivityView {
+    final LoginService loginService = new LoginService(this);
 
     private ImageButton back_btn;
     private EditText user_email;
@@ -61,12 +70,11 @@ public class LoginActivity extends AppCompatActivity {
     private CallbackManager mCallbackManager;
 
     // naver - clinet 정보
-    private static String OAUTH_CLIENT_ID = "FELJOtj1y_Pu0ZmPhtbc";
-    private static String OAUTH_CLIENT_SECRET = "qYYKACWzSu";
-    private static String OAUTH_CLIENT_NAME = "CARRIE";
-    private static OAuthLogin naverLoginInstance;
+//    private static String OAUTH_CLIENT_ID = "FELJOtj1y_Pu0ZmPhtbc";
+//    private static String OAUTH_CLIENT_SECRET = "qYYKACWzSu";
+//    private static String OAUTH_CLIENT_NAME = "CARRIE";
+//    private static OAuthLogin naverLoginInstance;
     static Context context;
-    boolean Isfalse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +92,6 @@ public class LoginActivity extends AppCompatActivity {
         kakao_invisible_btn = findViewById(R.id.login_btn_kakao_gone);
 
 
-        final String user_pw_str = user_pw.getText().toString();
         final String email_empty_alert = getString(R.string.login_empty_email);
         final String confirm_text = getString(R.string.confirm);
         final String emial_wrong_alert = getString(R.string.login_wrong_email_form);
@@ -94,6 +101,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String user_email_str = user_email.getText().toString();
+                String user_pw_str = user_pw.getText().toString();
+
                 // 이메일 입력해주세요
                 if (user_email_str.equals("")) {
                     SimpleMessageDialog simpleMessageDialog = new SimpleMessageDialog.Builder(LoginActivity.this)
@@ -108,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                     simpleMessageDialog.show();
                 }
                 // 이메일 형식이 올바르지 않습니다
-                else if (!(user_email_str.contains("@"))) {
+                else if (!(user_email_str.contains("@")) || !(user_email_str.contains("."))) {
                     SimpleMessageDialog simpleMessageDialog = new SimpleMessageDialog.Builder(LoginActivity.this)
                             .setMessage(emial_wrong_alert)
                             .setButtonText(confirm_text)
@@ -121,10 +130,14 @@ public class LoginActivity extends AppCompatActivity {
                     simpleMessageDialog.show();
                 }
 
-                // 해당 이메일로 가이된 유저가~~~
-                else if (!(user_email_str.equals("")) && !(user_pw_str.equals(""))) {
-                    // 해당 이메일과 비밀번호 회원 정보에서 조회 후 있으면 after main activity 로,
-                    // 없으면 SimpleMessageDialog 띄우기기
+                // 해당 이메일로 가입된 유저가~~~
+                else  {
+                    sSharedPreferences = getSharedPreferences(TAG,MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sSharedPreferences.edit();
+                    editor.remove(X_ACCESS_TOKEN);
+                    editor.putString(X_ACCESS_TOKEN,"empty_01");
+                    editor.commit();
+                    tryLogIn(user_email_str, user_pw_str);
                 }
             }
         });
@@ -229,6 +242,46 @@ public class LoginActivity extends AppCompatActivity {
         super.onDestroy();
         Session.getCurrentSession().removeCallback(kakaoCallback);
     }
+
+    @Override
+    public void LoginFailure(String message) {
+        String no_user_alert = getString(R.string.login_no_match_user);
+        String confirm_text = getString(R.string.confirm);
+        // 통신 끝났을 시
+        hideProgressDialog();
+        SimpleMessageDialog simpleMessageDialog = new SimpleMessageDialog.Builder(LoginActivity.this)
+                .setMessage(no_user_alert)
+                .setButtonText(confirm_text)
+                .setOnClickListener(new SimpleMessageDialog.OnClickListener() {
+                    @Override
+                    public void onClick(Dialog dialog) {
+                        dialog.dismiss();
+                    }
+                }).build();
+        simpleMessageDialog.show();
+    }
+
+    @Override
+    public void LogInSuccess(String jwt) {
+        hideProgressDialog();
+        // sharedpreference에 jwt 저장
+        sSharedPreferences = getSharedPreferences(TAG,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sSharedPreferences.edit();
+        editor.remove(X_ACCESS_TOKEN);
+        editor.putString(X_ACCESS_TOKEN,jwt);
+        editor.commit();
+        // 인텐트로 메인 화면 넘겨줌.
+        Intent intent = new Intent(LoginActivity.this, a_MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void tryLogIn(String email, String password)
+    {
+        showProgressDialog();
+        loginService.postLogIn(email,password);
+    }
+
 
     private class KakaoCallback implements ISessionCallback {
 
