@@ -267,13 +267,14 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
     }
 
     @Override
-    public void LogInSuccess(String jwt) {
+    public void LogInSuccess(String jwt, int id) {
         hideProgressDialog();
         // sharedpreference에 jwt 저장
         sSharedPreferences = getSharedPreferences(TAG,MODE_PRIVATE);
         SharedPreferences.Editor editor = sSharedPreferences.edit();
         editor.remove(X_ACCESS_TOKEN);
         editor.putString(X_ACCESS_TOKEN,jwt);
+        editor.putInt("ID",id);
         editor.commit();
         // 인텐트로 메인 화면 넘겨줌.
         Intent intent = new Intent(LoginActivity.this, a_MainActivity.class);
@@ -288,15 +289,18 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
     }
 
     @Override
-    public void SNSLogInSuccess(String jwt) {
+    public void SNSLogInSuccess(String jwt, int id) {
         hideProgressDialog();
         // sharedpreference에 jwt 저장
         String x_access = sSharedPreferences.getString(X_ACCESS_TOKEN,null);
+        SharedPreferences.Editor editor = sSharedPreferences.edit();
+        editor.putInt("ID",id);
+        editor.commit();
         Log.d("SNS 로그인 성공",x_access);
         // 인텐트로 메인 화면 넘겨줌.
-        Intent intent = new Intent(LoginActivity.this, a_MainActivity.class);
-        startActivity(intent);
-        finish();
+//        Intent intent = new Intent(LoginActivity.this, a_MainActivity.class);
+//        startActivity(intent);
+//        finish();
     }
 
     private void trySnsLogIn(String accessToken, String which_sns)
@@ -354,9 +358,14 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
                     editor.putString(X_ACCESS_TOKEN,accessToken.getAccessToken());
                     editor.commit();
 
+                    Intent intent = new Intent(LoginActivity.this, a_MainActivity.class);
+                    startActivity(intent);
+
                     // 카카오 로그인 성공 시 토큰 값을 sharedpreference에 넣어서 , 아래를 호출 한다.
                     // 호출후 snsLoginSucess 나 snsLoginFailure로 간다.
                     trySnsLogIn(accessToken.getAccessToken(),"kakao");
+
+                    finish();
 
                 }
             });

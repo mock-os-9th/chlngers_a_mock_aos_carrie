@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.main.mypage;
+package com.Carrie.challengersproject.src.main.mypage.follower_ing;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -19,7 +19,7 @@ import com.Carrie.challengersproject.src.main.after_login.a_MainActivity;
 
 import java.util.ArrayList;
 
-public class FollowingFragment extends Fragment {
+public class FollowerFragment extends Fragment {
     ViewGroup viewGroup;
     a_MainActivity mainActivity;
     private ArrayList<Follow_ing_Item> mArrayList;
@@ -40,8 +40,8 @@ public class FollowingFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        viewGroup = (ViewGroup) inflater.inflate(R.layout.following_fragment, container, false);
-        ImageButton back_btn = viewGroup.findViewById(R.id.following_ib_back_btn);
+        viewGroup = (ViewGroup) inflater.inflate(R.layout.follower_fragment, container, false);
+        ImageButton back_btn = viewGroup.findViewById(R.id.follower_ib_back_btn);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,13 +49,13 @@ public class FollowingFragment extends Fragment {
             }
         });
 
-        RecyclerView recyclerView = viewGroup.findViewById(R.id.following_recycler_view);
+        RecyclerView recyclerView = viewGroup.findViewById(R.id.follower_recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mainActivity);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         mArrayList = new ArrayList<>();
         //dummy
-        for(int i = 0; i<3; i++)
+        for(int i = 0; i<2; i++)
         {
             Follow_ing_Item follow_ing_item = new Follow_ing_Item("https://cdn.pixabay.com/photo/2016/10/09/15/21/business-man-1725976_960_720.png","가나다");
             Follow_ing_Item follow_ing_item2 = new Follow_ing_Item("https://imagescdn.gettyimagesbank.com/500/201806/jv11157747.jpg","라마바");
@@ -78,6 +78,7 @@ public class FollowingFragment extends Fragment {
                 //클릭시 아무일도 없음
             }
         });
+
 
 
         return viewGroup;

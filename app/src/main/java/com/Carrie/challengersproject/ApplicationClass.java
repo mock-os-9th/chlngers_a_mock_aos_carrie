@@ -34,6 +34,8 @@ public class ApplicationClass extends Application {
     // JWT Token 값
     public static String X_ACCESS_TOKEN = "X-ACCESS-TOKEN";
 
+
+
     //날짜 형식
     public static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA);
 

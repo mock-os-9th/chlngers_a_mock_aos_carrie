@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.main.mypage;
+package com.Carrie.challengersproject.src.main.mypage.setting;
 
 import android.content.Context;
 import android.os.Bundle;

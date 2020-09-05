@@ -36,7 +36,7 @@ public class LoginService {
                     return;
                 }
                 // 성공시 LigInSyccess 안에 이 jwt 토큰 넣어서 들어간다.
-                mLoginActivityView.LogInSuccess(loginResponse.getJwt());
+                mLoginActivityView.LogInSuccess(loginResponse.getJwt(), loginResponse.getLoginUserInfo().getId());
             }
 
             // API 통신이 실패했을 때 오는 곳 - 비동기 호출
@@ -64,7 +64,7 @@ public class LoginService {
                     return;
                 }
                 // 성공시 LigInSyccess 안에 이 jwt 토큰 넣어서 들어간다.
-                mLoginActivityView.SNSLogInSuccess(response.body().getJwt());
+                mLoginActivityView.SNSLogInSuccess(response.body().getJwt(),response.body().getSnsloginUserInfo().getId());
             }
 
             // API 통신이 실패했을 때 오는 곳 - 비동기 호출

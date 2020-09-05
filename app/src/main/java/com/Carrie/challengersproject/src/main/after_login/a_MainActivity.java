@@ -5,23 +5,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.main.camera.CameraFragment;
-import com.Carrie.challengersproject.src.main.mypage.ChangeProfileFragment;
+import com.Carrie.challengersproject.src.main.mypage.interfaces.MypageFragmentView;
+import com.Carrie.challengersproject.src.main.mypage.models.MypageResponse;
+import com.Carrie.challengersproject.src.main.mypage.setting.ChangeProfileFragment;
 import com.Carrie.challengersproject.src.main.feed.FeedFragment;
 import com.Carrie.challengersproject.src.main.new_.NewFragment;
 import com.Carrie.challengersproject.src.main.search.SearchFragment;
-import com.Carrie.challengersproject.src.main.mypage.FollowerFragment;
-import com.Carrie.challengersproject.src.main.mypage.FollowingFragment;
+import com.Carrie.challengersproject.src.main.mypage.follower_ing.FollowerFragment;
+import com.Carrie.challengersproject.src.main.mypage.follower_ing.FollowingFragment;
 import com.Carrie.challengersproject.src.main.mypage.MypageFragment;
-import com.Carrie.challengersproject.src.main.mypage.SettingFragment;
+import com.Carrie.challengersproject.src.main.mypage.setting.SettingFragment;
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Calendar;
 
 // 로그인 되어 있을 때 넘어 오는 액티비티
 // 액티비티 넘어 올때 로딩 등 있다. base activity 추후에 상속
@@ -142,4 +153,6 @@ public class a_MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,followingFragment).commitAllowingStateLoss();
         }
     }
+
+
 }

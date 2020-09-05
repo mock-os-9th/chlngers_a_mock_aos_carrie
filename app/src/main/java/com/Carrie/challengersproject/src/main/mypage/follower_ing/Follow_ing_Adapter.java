@@ -1,4 +1,4 @@
-package com.Carrie.challengersproject.src.main.mypage;
+package com.Carrie.challengersproject.src.main.mypage.follower_ing;
 
 import android.content.Context;
 import android.view.LayoutInflater;

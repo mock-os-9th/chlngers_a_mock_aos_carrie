@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,21 +43,21 @@ public class b_MypageFragment extends Fragment  {
             }
         });
 
-        Button follower_btn = viewGroup.findViewById(R.id.myPage_fragment_btn_follower);
-        follower_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.onChangeFragment(8);
-            }
-        });
-
-        Button following_btn = viewGroup.findViewById(R.id.myPage_fragment_btn_following);
-        following_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.onChangeFragment(9);
-            }
-        });
+//        TextView follower_btn = viewGroup.findViewById(R.id.myPage_fragment_tv_follower);
+//        follower_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mainActivity.onChangeFragment(8);
+//            }
+//        });
+//
+//        TextView following_btn = viewGroup.findViewById(R.id.myPage_fragment_tv_following);
+//        following_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mainActivity.onChangeFragment(9);
+//            }
+//        });
 
 
 

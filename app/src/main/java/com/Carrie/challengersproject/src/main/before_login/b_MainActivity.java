@@ -12,11 +12,11 @@ import android.view.View;
 import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.common.view.PopupInfoDialog;
 import com.Carrie.challengersproject.src.main.camera.CameraFragment;
-import com.Carrie.challengersproject.src.main.mypage.ChangeProfileFragment;
+import com.Carrie.challengersproject.src.main.mypage.setting.ChangeProfileFragment;
 import com.Carrie.challengersproject.src.main.feed.FeedFragment;
-import com.Carrie.challengersproject.src.main.mypage.FollowerFragment;
-import com.Carrie.challengersproject.src.main.mypage.FollowingFragment;
-import com.Carrie.challengersproject.src.main.mypage.SettingFragment;
+import com.Carrie.challengersproject.src.main.mypage.follower_ing.FollowerFragment;
+import com.Carrie.challengersproject.src.main.mypage.follower_ing.FollowingFragment;
+import com.Carrie.challengersproject.src.main.mypage.setting.SettingFragment;
 import com.Carrie.challengersproject.src.register.RegisterActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -51,8 +51,6 @@ public class b_MainActivity extends AppCompatActivity  {
                 finish();
             }
         });
-
-
 
         bottomNavigationView = findViewById(R.id.activity_b_bnv);
         bottomNavigationView.setItemIconTintList(null);
