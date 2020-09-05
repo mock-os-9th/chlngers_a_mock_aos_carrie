@@ -69,6 +69,8 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
     private KakaoCallback kakaoCallback;
     private CallbackManager mCallbackManager;
 
+//    boolean kakao_login_boolean = false;
+
     // naver - clinet 정보
 //    private static String OAUTH_CLIENT_ID = "FELJOtj1y_Pu0ZmPhtbc";
 //    private static String OAUTH_CLIENT_SECRET = "qYYKACWzSu";
@@ -175,10 +177,13 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
                 kakao_invisible_btn.callOnClick();
                 Session.getCurrentSession().addCallback(kakaoCallback);
                 Session.getCurrentSession().checkAndImplicitOpen();
-//                // 사용자 토큰 가져오기
-//                AccessToken accessToken;
-//                accessToken = Session.getCurrentSession().getTokenInfo();
-//                Log.e("카카오 토큰",accessToken.getAccessToken());
+
+//                if(kakao_login_boolean)
+//                {
+//                    String  sp =sSharedPreferences.getString(TAG,null);
+//                    trySnsLogIn(sp,"kakao");
+//                }
+
 
             }
         });
@@ -276,6 +281,30 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
         finish();
     }
 
+    @Override
+    public void SNSLoginFailure(String message) {
+        // 아무것도 안하기
+        hideProgressDialog();
+    }
+
+    @Override
+    public void SNSLogInSuccess(String jwt) {
+        hideProgressDialog();
+        // sharedpreference에 jwt 저장
+        String x_access = sSharedPreferences.getString(X_ACCESS_TOKEN,null);
+        Log.d("SNS 로그인 성공",x_access);
+        // 인텐트로 메인 화면 넘겨줌.
+        Intent intent = new Intent(LoginActivity.this, a_MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void trySnsLogIn(String accessToken, String which_sns)
+    {
+        showProgressDialog();
+        loginService.postSnsLogIn(accessToken,which_sns);
+    }
+
     private void tryLogIn(String email, String password)
     {
         showProgressDialog();
@@ -308,7 +337,7 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
 
                 @Override
                 public void onSessionClosed(ErrorResult errorResult) {
-                    // 로그인 세샨 도중 비정상적 이유로 닫힐때
+                    // 로그인 세션 도중 비정상적 이유로 닫힐때
                     Toast.makeText(context, R.string.session_error,Toast.LENGTH_SHORT).show();
                 }
 
@@ -319,9 +348,16 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
                     accessToken = Session.getCurrentSession().getTokenInfo();
                     //
                     Log.e("카카오 토큰",accessToken.getAccessToken());
-                    Intent intent = new Intent(LoginActivity.this, a_MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                    sSharedPreferences = getSharedPreferences(TAG,MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sSharedPreferences.edit();
+                    editor.remove(X_ACCESS_TOKEN);
+                    editor.putString(X_ACCESS_TOKEN,accessToken.getAccessToken());
+                    editor.commit();
+
+                    // 카카오 로그인 성공 시 토큰 값을 sharedpreference에 넣어서 , 아래를 호출 한다.
+                    // 호출후 snsLoginSucess 나 snsLoginFailure로 간다.
+                    trySnsLogIn(accessToken.getAccessToken(),"kakao");
+
                 }
             });
         }
