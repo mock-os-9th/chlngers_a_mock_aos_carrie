@@ -29,7 +29,7 @@ public class MypageService {
                 final MypageResponse mypageResponse = response.body();
                 if (mypageResponse == null) {
                     // 이게 어디로 갈까? mainactivtiy에 있는 validateFailure로 간다.
-                    mMypageFragmentView.MyPageGetFailure(response.body().getMessage());
+                    mMypageFragmentView.MyPageGetFailure("실패-null");
                     return;
                 }
 

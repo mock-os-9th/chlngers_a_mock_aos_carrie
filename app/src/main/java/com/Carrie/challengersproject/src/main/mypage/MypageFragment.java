@@ -33,9 +33,6 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import static android.content.Context.MODE_PRIVATE;
-import static com.Carrie.challengersproject.ApplicationClass.DATE_FORMAT;
-import static com.Carrie.challengersproject.ApplicationClass.TAG;
 import static com.Carrie.challengersproject.ApplicationClass.sSharedPreferences;
 
 public class MypageFragment extends Fragment implements MypageFragmentView {
@@ -158,6 +155,8 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
         follwing_count = viewGroup.findViewById(R.id.myPage_fragment_tv_following_num);
         interest_field = viewGroup.findViewById(R.id.myPage_fragment_tv_list_favorite);
         calendarView = viewGroup.findViewById(R.id.myPage_fragment_cv_calender);
+
+        TryGetMypage();
 
         return viewGroup;
     }

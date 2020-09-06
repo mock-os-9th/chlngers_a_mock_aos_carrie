@@ -20,9 +20,9 @@ public class UserDeleteService {
         this.mUserDeleteView = mUserDeleteView;
     }
 
-    public void getUserDeleteTest(int id) {
+    public void getUserDeleteTest() {
         final UserDeleteRetrofitInterface userDeleteRetrofitInterface = getRetrofit().create(UserDeleteRetrofitInterface.class);
-        userDeleteRetrofitInterface.getTestUserDelete(id).enqueue(new Callback<UserDeleteResponse>() {
+        userDeleteRetrofitInterface.getTestUserDelete().enqueue(new Callback<UserDeleteResponse>() {
 
             // 필요할 때 복붙해서 쓰세요요 - 비동기 호출 (물 흐르듯 위에서 아래로 흐르지 않음) - 비동기 오류를 겪을 수도 있다.
             @Override
@@ -31,7 +31,7 @@ public class UserDeleteService {
                 final UserDeleteResponse userDeleteResponse = response.body();
                 if (userDeleteResponse == null) {
                     // 이게 어디로 갈까? mainactivtiy에 있는 validateFailure로 간다.
-                    mUserDeleteView.UserDeleteFailure(response.body().getCode());
+                    mUserDeleteView.UserDeleteFailure(0);
                     return;
                 }
 

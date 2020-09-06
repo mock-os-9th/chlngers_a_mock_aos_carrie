@@ -24,10 +24,9 @@ public class ChangeProfileFragment extends Fragment implements UserDeleteView {
     ViewGroup viewGroup;
     a_MainActivity mainActivity;
 
-    UserDeleteService userDeleteService = new UserDeleteService(this);
+    Button user_delete_btn;
 
-    // onAttach 시에 Activity 에 대한 참조를 얻을 수 있다.
-    // 따라서 각각 Fragment 는 이벤트 시에 Activity 의 메소드를 호출 할 수 있다.
+    // onAttach 시에 Activity 에 대한 참조를 얻을 수 있다, 따라서 각각 Fragment 는 이벤트 시에 Activity 의 메소드를 호출 할 수 있다.
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -56,13 +55,12 @@ public class ChangeProfileFragment extends Fragment implements UserDeleteView {
         });
 
         // 회원탈퇴 버튼
-        Button user_delete_btn = viewGroup.findViewById(R.id.change_profile_exit_btn);
+        user_delete_btn = viewGroup.findViewById(R.id.change_profile_exit_btn);
         user_delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 통신 시작
                  tryUserDelete();
-//                mainActivity.ConnectApi(1);
             }
         });
 
@@ -81,17 +79,21 @@ public class ChangeProfileFragment extends Fragment implements UserDeleteView {
 
     private void tryUserDelete()
     {
+        UserDeleteService userDeleteService = new UserDeleteService(this);
+
         int id = sSharedPreferences.getInt("ID",0);
         Log.e("유저 삭제",String.valueOf(id));
-        userDeleteService.getUserDeleteTest(id);
+        userDeleteService.getUserDeleteTest();
     }
 
 
     @Override
     public void UserDeleteSuccess(int code) {
-        Log.d("유저 삭제 통신 성공::코드::", String.valueOf(code));
-    }
 
+        Log.d("유저 삭제 통신 성공::코드::", String.valueOf(code));
+        // Intent 로 메인으로 넘기기기
+        mainActivity.onChangeFragment(10);
+    }
     @Override
     public void UserDeleteFailure(int code) {
         Log.d("유저 삭제 통신 실패::코드::", String.valueOf(code));

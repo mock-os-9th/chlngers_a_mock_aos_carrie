@@ -8,8 +8,7 @@ import retrofit2.http.Path;
 
 public interface UserDeleteRetrofitInterface {
 
-    @DELETE("/user/{userId}")
+    @DELETE("/user")
     Call<UserDeleteResponse> getTestUserDelete(
-            @Path("userId") int userId
     );
 }
