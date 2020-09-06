@@ -83,20 +83,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/mypage_nickname"
-                    android:textSize="14sp"
                     android:textColor="@color/colorGray"
                     android:layout_marginLeft="10dp"/>
 
                 <Button
                     android:id="@+id/change_profile_btn_change_nickname"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:text="@string/mypage_nickname"
+                    android:textSize="15sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:drawableRight="@drawable/ic_chevron_right_black_24dp"
                     android:drawableTint="@color/colorPrimaryDark"
                     android:background="@color/colorAccent"
                     android:layout_marginLeft="10dp"
+                    android:stateListAnimator="@null"
                     android:gravity="start|center_vertical"
                     app:elevation="0dp"
                     android:elevation="0dp" />
@@ -124,20 +125,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_profile_favorite"
-                    android:textSize="14sp"
                     android:textColor="@color/colorGray"
                     android:layout_marginLeft="10dp"/>
                 <Button
                     android:id="@+id/change_profile_btn_change_favorite"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:text="@string/change_profile_favorite"
+                    android:textSize="15sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:drawableRight="@drawable/ic_chevron_right_black_24dp"
                     android:drawableTint="@color/colorPrimaryDark"
                     android:background="@color/colorAccent"
                     android:layout_marginLeft="10dp"
                     android:gravity="start|center_vertical"
+                    android:stateListAnimator="@null"
                     app:elevation="0dp"
                     android:elevation="0dp" />
             </LinearLayout>
@@ -163,17 +165,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_profile_introduction"
-                    android:textSize="14sp"
                     android:textColor="@color/colorGray"
                     android:layout_marginLeft="10dp"/>
                 <Button
                     android:id="@+id/change_profile_btn_introduction"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:text="@string/change_profile_introduction"
+                    android:textSize="15sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:drawableRight="@drawable/ic_chevron_right_black_24dp"
                     android:drawableTint="@color/colorPrimaryDark"
+                    android:stateListAnimator="@null"
                     android:background="@color/colorAccent"
                     android:layout_marginLeft="10dp"
                     android:gravity="start|center_vertical"
@@ -202,16 +205,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_profile_email"
-                    android:textSize="14sp"
                     android:textColor="@color/colorGray"
                     android:layout_marginLeft="10dp"/>
                 <Button
                     android:id="@+id/change_profile_tv_email"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:text="@string/change_profile_email"
+                    android:textSize="15sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:stateListAnimator="@null"
                     android:drawableTint="@color/colorPrimaryDark"
                     android:background="@color/colorAccent"
                     android:layout_marginLeft="10dp"
@@ -241,20 +245,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_profile_name"
-                    android:textSize="14sp"
                     android:textColor="@color/colorGray"
                     android:layout_marginLeft="10dp"/>
                 <Button
                     android:id="@+id/change_profile_tv_name"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:text="@string/change_profile_name"
+                    android:textSize="15sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:drawableRight="@drawable/ic_chevron_right_black_24dp"
                     android:drawableTint="@color/colorPrimaryDark"
                     android:background="@color/colorAccent"
                     android:layout_marginLeft="10dp"
                     android:gravity="start|center_vertical"
+                    android:stateListAnimator="@null"
                     app:elevation="0dp"
                     android:elevation="0dp" />
             </LinearLayout>
@@ -280,20 +285,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_profile_phone_num"
-                    android:textSize="14sp"
                     android:textColor="@color/colorGray"
                     android:layout_marginLeft="10dp"/>
                 <Button
                     android:id="@+id/change_profile_btn_phone_number"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:text="@string/change_profile_phone_num"
+                    android:textSize="15sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:drawableRight="@drawable/ic_chevron_right_black_24dp"
                     android:drawableTint="@color/colorPrimaryDark"
                     android:background="@color/colorAccent"
                     android:layout_marginLeft="10dp"
                     android:gravity="start|center_vertical"
+                    android:stateListAnimator="@null"
                     app:elevation="0dp"
                     android:elevation="0dp" />
             </LinearLayout>
@@ -326,6 +332,7 @@
                     android:background="@color/colorAccent"
                     android:layout_marginLeft="10dp"
                     android:gravity="start|center_vertical"
+                    android:stateListAnimator="@null"
                     app:elevation="0dp"
                     android:elevation="0dp" />
             </LinearLayout>
@@ -350,20 +357,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_profile_account"
-                    android:textSize="14sp"
                     android:textColor="@color/colorGray"
                     android:layout_marginLeft="10dp"/>
                 <Button
                     android:id="@+id/change_profile_btn_account"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:text="@string/change_profile_account"
+                    android:textSize="15sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:drawableRight="@drawable/ic_chevron_right_black_24dp"
                     android:drawableTint="@color/colorPrimaryDark"
                     android:background="@color/colorAccent"
                     android:layout_marginLeft="10dp"
                     android:gravity="start|center_vertical"
+                    android:stateListAnimator="@null"
                     app:elevation="0dp"/>
             </LinearLayout>
 
@@ -386,21 +394,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/change_profile_account"
-                    android:textSize="14sp"
+                    android:text="@string/change_profile_admin_company"
                     android:textColor="@color/colorGray"
                     android:layout_marginLeft="10dp"/>
                 <Button
                     android:id="@+id/change_profile_btn_admin_company"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="@string/change_profile_account"
+                    android:layout_height="25dp"
+                    android:text="@string/change_profile_admin_company"
+                    android:textSize="15sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:drawableRight="@drawable/ic_chevron_right_black_24dp"
                     android:drawableTint="@color/colorPrimaryDark"
                     android:background="@color/colorAccent"
                     android:layout_marginLeft="10dp"
                     android:gravity="start|center_vertical"
+                    android:stateListAnimator="@null"
                     app:elevation="0dp"/>
             </LinearLayout>
 

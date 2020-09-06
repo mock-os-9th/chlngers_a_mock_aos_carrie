@@ -54,7 +54,9 @@ public class ChangeProfileFragment extends Fragment implements UserDeleteView {
             }
         });
 
-        // 회원탈퇴 버튼
+        // 전체 마이페이지 정보 MypageService 를 통해 casting 해 놓아야 한다.
+
+       // 회원탈퇴 버튼
         user_delete_btn = viewGroup.findViewById(R.id.change_profile_exit_btn);
         user_delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +67,14 @@ public class ChangeProfileFragment extends Fragment implements UserDeleteView {
         });
 
         // 닉네임 누를 때 -> 수정으로 이동
+        Button change_nickname =viewGroup.findViewById(R.id.change_profile_btn_change_nickname);
+        change_nickname.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 닉네임 변경 화면으로
+                mainActivity.onChangeFragment(11);
+            }
+        });
 
 
         // 소개 누를 때 -> 소개 하로

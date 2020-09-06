@@ -13,7 +13,7 @@ import static com.Carrie.challengersproject.ApplicationClass.getRetrofit;
 public class MypageService {
     private final MypageFragmentView mMypageFragmentView;
 
-    public MypageService(MypageFragmentView mMypageFragmentView) {
+    MypageService(final MypageFragmentView mMypageFragmentView) {
         this.mMypageFragmentView = mMypageFragmentView;
     }
 

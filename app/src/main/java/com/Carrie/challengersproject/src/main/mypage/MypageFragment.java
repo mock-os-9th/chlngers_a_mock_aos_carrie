@@ -157,7 +157,6 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
         calendarView = viewGroup.findViewById(R.id.myPage_fragment_cv_calender);
 
         TryGetMypage();
-
         return viewGroup;
     }
 

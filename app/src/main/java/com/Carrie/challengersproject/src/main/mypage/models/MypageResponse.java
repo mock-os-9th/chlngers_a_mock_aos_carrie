@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class MypageResponse {
 
@@ -37,10 +38,10 @@ public class MypageResponse {
         private int followingCount;
 
         @SerializedName("interestFields")
-        private ArrayList interestFields;
+        private List<String> interestFields;
 
         @SerializedName("everydayRecords")
-        private ArrayList everydayRecords;
+        private List<String> everydayRecords;
 
         @SerializedName("todayChallenges")
         private Challenge todayChallenges;
@@ -81,11 +82,11 @@ public class MypageResponse {
             return followingCount;
         }
 
-        public ArrayList getInterestFields() {
+        public List<String> getInterestFields() {
             return interestFields;
         }
 
-        public ArrayList getEverydayRecords() {
+        public List<String> getEverydayRecords() {
             return everydayRecords;
         }
 
@@ -106,10 +107,10 @@ public class MypageResponse {
         private String photoUrl;
 
         @SerializedName("startDay")
-        private Date startDay;
+        private String startDay;
 
         @SerializedName("endDay")
-        private Date endDay;
+        private String endDay;
 
         @SerializedName("participantCount")
         private int participantCount;
@@ -126,11 +127,11 @@ public class MypageResponse {
             return photoUrl;
         }
 
-        public Date getStartDay() {
+        public String getStartDay() {
             return startDay;
         }
 
-        public Date getEndDay() {
+        public String getEndDay() {
             return endDay;
         }
 
