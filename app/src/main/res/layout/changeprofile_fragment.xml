@@ -22,174 +22,10 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_chevron_left_black_24dp"
         android:background="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="@id/change_profile_tv_title"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="15dp" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/change_profile_tv_title"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="10dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:layout_marginLeft="10dp">
-
-            <ImageView
-                android:id="@+id/change_profile_iv_profile"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/profile80"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <Button
-                    android:id="@+id/change_profile_btn_change_nickname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mypage_nickname"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
-                    android:drawableTint="@color/colorPrimaryDark"
-                    android:background="@color/colorAccent"
-                    android:gravity="start|center_vertical"
-                    app:elevation="0dp"
-                    android:elevation="0dp"
-                    app:layout_constraintTop_toBottomOf="@id/change_profile_iv_profile"/>
-
-            <Button
-                android:id="@+id/change_profile_btn_change_favorite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_favorite"
-                android:textColor="@color/colorPrimaryDark"
-                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
-                android:gravity="start|center_vertical"
-                android:drawableTint="@color/colorPrimaryDark"
-                android:background="@color/colorAccent"
-                app:elevation="0dp"
-                android:elevation="0dp"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_btn_change_nickname"/>
-            <Button
-                android:id="@+id/change_profile_btn_introduction"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_introduction"
-                android:textColor="@color/colorPrimaryDark"
-                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
-                android:gravity="start|center_vertical"
-                android:drawableTint="@color/colorPrimaryDark"
-                android:background="@color/colorAccent"
-                app:elevation="0dp"
-                android:elevation="0dp"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_btn_change_favorite"/>
-
-
-            <TextView
-                android:id="@+id/change_profile_tv_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_email"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_btn_introduction"
-                android:textColor="@color/colorGray"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginTop="3dp"/>
-            <TextView
-                android:id="@+id/change_profile_tv_user_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_email"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_tv_email"
-                android:textColor="@color/colorBlack"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginTop="3dp"/>
-
-            <TextView
-                android:id="@+id/change_profile_tv_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_name"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_tv_user_email"
-                android:textColor="@color/colorGray"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginTop="3dp"/>
-            <TextView
-                android:id="@+id/change_profile_tv_user_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_name"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_tv_name"
-                android:textColor="@color/colorBlack"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginTop="3dp"/>
-
-            <Button
-                android:id="@+id/change_profile_btn_phone_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_phone_num"
-                android:textColor="@color/colorPrimaryDark"
-                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
-                android:gravity="start|center_vertical"
-                android:drawableTint="@color/colorPrimaryDark"
-                android:background="@color/colorAccent"
-                app:elevation="0dp"
-                android:elevation="0dp"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_tv_user_name"/>
-
-            <Button
-                android:id="@+id/change_profile_btn_pw"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_pw"
-                android:textColor="@color/colorGray"
-                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
-                android:gravity="start|center_vertical"
-                android:drawableTint="@color/colorPrimaryDark"
-                android:background="@color/colorAccent"
-                app:elevation="0dp"
-                android:elevation="0dp"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_btn_phone_number"/>
-
-
-            <Button
-                android:id="@+id/change_profile_btn_account"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_account"
-                android:textColor="@color/colorGray"
-                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
-                android:gravity="start|center_vertical"
-                android:drawableTint="@color/colorPrimaryDark"
-                android:background="@color/colorAccent"
-                app:elevation="0dp"
-                android:elevation="0dp"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_btn_pw"/>
-
-            <Button
-                android:id="@+id/change_profile_btn_admin_company"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_profile_admin_company"
-                android:textColor="@color/colorGray"
-                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
-                android:gravity="start|center_vertical"
-                android:drawableTint="@color/colorPrimaryDark"
-                android:background="@color/colorAccent"
-                app:elevation="0dp"
-                android:elevation="0dp"
-                app:layout_constraintTop_toBottomOf="@id/change_profile_btn_account"/>
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
     <Button
         android:id="@+id/change_profile_exit_btn"
@@ -203,5 +39,385 @@
         app:layout_constraintRight_toRightOf="parent"
         app:elevation="0dp"
         android:elevation="0dp"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/change_profile_tv_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp">
+
+            <ImageView
+                android:id="@+id/change_profile_iv_profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/profile80"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <View
+                android:id="@+id/change_profile_id_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_iv_profile"/>
+
+            <LinearLayout
+                android:id="@+id/change_profile_ll1_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/change_profile_id_1"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mypage_nickname"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginLeft="10dp"/>
+
+                <Button
+                    android:id="@+id/change_profile_btn_change_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/mypage_nickname"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableTint="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start|center_vertical"
+                    app:elevation="0dp"
+                    android:elevation="0dp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/change_profile_id_2"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_ll1_nickname"/>
+
+            <LinearLayout
+                android:id="@+id/change_profile_ll2_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/change_profile_id_2"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_profile_favorite"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginLeft="10dp"/>
+                <Button
+                    android:id="@+id/change_profile_btn_change_favorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/change_profile_favorite"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableTint="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start|center_vertical"
+                    app:elevation="0dp"
+                    android:elevation="0dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/change_profile_id_3"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_ll2_nickname"/>
+
+            <LinearLayout
+                android:id="@+id/change_profile_ll3_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/change_profile_id_3"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_profile_introduction"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginLeft="10dp"/>
+                <Button
+                    android:id="@+id/change_profile_btn_introduction"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/change_profile_introduction"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableTint="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start|center_vertical"
+                    app:elevation="0dp"
+                    android:elevation="0dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/change_profile_id_4"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_ll3_nickname"/>
+
+            <LinearLayout
+                android:id="@+id/change_profile_ll4_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/change_profile_id_4"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_profile_email"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginLeft="10dp"/>
+                <Button
+                    android:id="@+id/change_profile_tv_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/change_profile_email"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableTint="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start|center_vertical"
+                    app:elevation="0dp"
+                    android:elevation="0dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/change_profile_id_5"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_ll4_nickname"/>
+
+            <LinearLayout
+                android:id="@+id/change_profile_ll5_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/change_profile_id_5"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_profile_name"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginLeft="10dp"/>
+                <Button
+                    android:id="@+id/change_profile_tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/change_profile_name"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableTint="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start|center_vertical"
+                    app:elevation="0dp"
+                    android:elevation="0dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/change_profile_id_6"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_ll5_nickname"/>
+
+            <LinearLayout
+                android:id="@+id/change_profile_ll6_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/change_profile_id_6"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_profile_phone_num"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginLeft="10dp"/>
+                <Button
+                    android:id="@+id/change_profile_btn_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/change_profile_phone_num"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableTint="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start|center_vertical"
+                    app:elevation="0dp"
+                    android:elevation="0dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/change_profile_id_7"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_ll6_nickname"/>
+
+            <LinearLayout
+                android:id="@+id/change_profile_ll7_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/change_profile_id_7"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+
+                <Button
+                    android:id="@+id/change_profile_btn_pw"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/change_profile_pw"
+                    android:textColor="@color/colorGray"
+                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableTint="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start|center_vertical"
+                    app:elevation="0dp"
+                    android:elevation="0dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/change_profile_id_8"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_ll7_nickname"/>
+
+            <LinearLayout
+                android:id="@+id/change_profile_ll8_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/change_profile_id_8"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_profile_account"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginLeft="10dp"/>
+                <Button
+                    android:id="@+id/change_profile_btn_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/change_profile_account"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableTint="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start|center_vertical"
+                    app:elevation="0dp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/change_profile_id_9"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_ll8_nickname"/>
+
+            <LinearLayout
+                android:id="@+id/change_profile_ll9_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/change_profile_id_9"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_profile_account"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginLeft="10dp"/>
+                <Button
+                    android:id="@+id/change_profile_btn_admin_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/change_profile_account"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                    android:drawableTint="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="start|center_vertical"
+                    app:elevation="0dp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/change_profile_id_10"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@+id/change_profile_ll9_nickname"/>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

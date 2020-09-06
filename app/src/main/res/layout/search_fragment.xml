@@ -9,13 +9,13 @@
         android:id="@+id/search_fm_et_search"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="13dp"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:hint="@string/search_what_do_you_want_habit"
         android:textColorHint="@color/colorPrimaryDark"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:drawableLeft="@drawable/ic_search_black_12dp"
         android:drawablePadding="20dp"
         android:background="@color/colorGrayPressed"/>
@@ -32,7 +32,7 @@
         android:id="@+id/search_fm_ib_notification"
         app:layout_constraintTop_toTopOf="@+id/search_fm_et_search"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_notifications_none_black_24dp"
@@ -41,7 +41,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/search_fm_ib_notification">
+        app:layout_constraintTop_toBottomOf="@id/search_fm_et_search">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                 app:layout_constraintTop_toBottomOf="@id/search_fm_empty_1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginLeft="10dp"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -74,7 +74,7 @@
                 android:textColor="@color/colorBlack"
                 app:layout_constraintLeft_toRightOf="@+id/search_fm_tv_nick_name"
                 app:layout_constraintTop_toTopOf="@+id/search_fm_tv_nick_name"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -85,7 +85,7 @@
                 android:textColor="@color/colorBlack"
                 app:layout_constraintLeft_toLeftOf="@id/search_fm_tv_nick_name"
                 app:layout_constraintTop_toBottomOf="@id/search_fm_tv_nick_name"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -100,11 +100,11 @@
                 android:layout_marginRight="5dp"/>
 
             <ScrollView
+                android:id="@+id/search_fm_scroll_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/search_fm_tv_msg2"
                 android:layout_marginTop="30dp">
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/search_fm_recyclerview_recommand_item"
                     android:layout_width="wrap_content"
@@ -112,7 +112,151 @@
 
             </ScrollView>
 
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/search_fm_banner"
+                android:layout_width="wrap_content"
+                android:layout_height="135dp"
+                app:layout_constraintTop_toBottomOf="@+id/search_fm_scroll_1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="15dp"
+                android:scaleType="fitXY" />
 
+            <TextView
+                android:id="@+id/search_fm_tv_exercise_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/search_fm_banner"
+                app:layout_constraintLeft_toLeftOf="@+id/search_fm_tv_nick_name"
+                android:layout_marginTop="15dp"
+                android:text="운동 챌린지"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/search_fm_tv_exercise_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="@+id/search_fm_tv_show_all"
+                app:layout_constraintBottom_toBottomOf="@id/search_fm_tv_exercise_title"
+                android:text="더보기"
+                android:textSize="11sp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/search_fm_tv_exercise_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_tv_exercise_title"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_tv_exercise_title"
+                android:text="운동하러 가기만 해도 반은 성공!"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="3dp"/>
+
+            <ScrollView
+                android:id="@+id/search_fm_scroll_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_tv_exercise_explain"
+                android:layout_marginTop="10dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/search_fm_recyclerview_exercise_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/search_fm_tv_study_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/search_fm_scroll_2"
+                app:layout_constraintLeft_toLeftOf="@+id/search_fm_tv_nick_name"
+                android:layout_marginTop="25dp"
+                android:text="공부 챌린지"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/search_fm_tv_study_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="@+id/search_fm_tv_show_all"
+                app:layout_constraintBottom_toBottomOf="@id/search_fm_tv_study_title"
+                android:text="더보기"
+                android:textSize="11sp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/search_fm_tv_study_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_tv_study_title"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_tv_study_title"
+                android:text="꾸준히, 더 오래, 더 자주 공부하는 내가 되기"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="3dp"/>
+
+            <ScrollView
+                android:id="@+id/search_fm_scroll_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_tv_study_explain"
+                android:layout_marginTop="10dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/search_fm_recyclerview_study_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+
+
+            <TextView
+                android:id="@+id/search_fm_tv_know_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/search_fm_scroll_3"
+                app:layout_constraintLeft_toLeftOf="@+id/search_fm_tv_nick_name"
+                android:layout_marginTop="25dp"
+                android:text="지식 역량 챌린지"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/search_fm_tv_know_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="@+id/search_fm_tv_show_all"
+                app:layout_constraintBottom_toBottomOf="@id/search_fm_tv_know_title"
+                android:text="더보기"
+                android:textSize="11sp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/search_fm_tv_know_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_tv_know_title"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_tv_know_title"
+                android:text="다양한 책과 컨텐츠로 지식을 늘려요"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="3dp"/>
+
+            <ScrollView
+                android:id="@+id/search_fm_scroll_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_tv_know_explain"
+                android:layout_marginTop="10dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/search_fm_recyclerview_know_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

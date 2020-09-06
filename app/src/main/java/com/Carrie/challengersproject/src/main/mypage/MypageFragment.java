@@ -46,32 +46,31 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
 
     final MypageService mypageService = new MypageService(this);
 
-    ImageView profileImg ;
+    ImageView profileImg;
     TextView nickname;
-    Button grade ;
-    TextView reward ;
+    Button grade;
+    TextView reward;
     TextView follower_count;
     TextView follwing_count;
     TextView interest_field;
-    CalendarView calendarView ;
+    CalendarView calendarView;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        mainActivity = (a_MainActivity)getActivity();
-        TryGetMypage();
+        mainActivity = (a_MainActivity) getActivity();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mainActivity =null;
+        mainActivity = null;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        viewGroup = (ViewGroup) inflater.inflate(R.layout.mypage_fragment,container,false);
+        viewGroup = (ViewGroup) inflater.inflate(R.layout.mypage_fragment, container, false);
 
         // 설정 버튼
         ImageButton setting_btn = viewGroup.findViewById(R.id.myPage_fragment_ib_setting);
@@ -138,7 +137,7 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
         int graycolor = getResources().getColor(R.color.colorGray);
         RadarData radarData = new RadarData();
         radarData.addDataSet(dataSet);
-        String[] labels ={"역량","건강","관계","자산","생활","취미"};
+        String[] labels = {"역량", "건강", "관계", "자산", "생활", "취미"};
         XAxis xAxis = radarChart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
         radarChart.setRotationAngle(60);
@@ -158,13 +157,12 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
         follower_count = viewGroup.findViewById(R.id.myPage_fragment_tv_follower_num);
         follwing_count = viewGroup.findViewById(R.id.myPage_fragment_tv_following_num);
         interest_field = viewGroup.findViewById(R.id.myPage_fragment_tv_list_favorite);
-        calendarView =viewGroup.findViewById(R.id.myPage_fragment_cv_calender);
+        calendarView = viewGroup.findViewById(R.id.myPage_fragment_cv_calender);
 
         return viewGroup;
     }
 
-    private ArrayList<RadarEntry> dataValue()
-    {
+    private ArrayList<RadarEntry> dataValue() {
         //차트 데이터 생성
         ArrayList<RadarEntry> dataVals = new ArrayList<>();
         dataVals.add(new RadarEntry(100));
@@ -176,12 +174,6 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
         return dataVals;
     }
 
-    public void TryGetMypage()
-    {
-        int id = sSharedPreferences.getInt("ID",0);
-        mypageService.GetMyPageIn(id);
-        Log.e("아이디",String.valueOf(id));
-    }
 
 
 //    private int userId;
@@ -197,7 +189,12 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
 
 //  달력날짜  private ArrayList everydayRecords;
 //  챌린지 정보  private Challenge todayChallenges;
-
+    public void TryGetMypage()
+    {
+        int id = sSharedPreferences.getInt("ID",0);
+        mypageService.GetMyPageIn(id);
+        Log.e("아이디",String.valueOf(id));
+    }
     @Override
     public void MyPageGetSuccess(MypageResponse.MypageInfo mypageInfo) {
         // 성공시

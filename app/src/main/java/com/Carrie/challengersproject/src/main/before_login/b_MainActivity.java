@@ -12,7 +12,7 @@ import android.view.View;
 import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.common.view.PopupInfoDialog;
 import com.Carrie.challengersproject.src.main.camera.CameraFragment;
-import com.Carrie.challengersproject.src.main.mypage.setting.ChangeProfileFragment;
+import com.Carrie.challengersproject.src.main.mypage.setting.profile.ChangeProfileFragment;
 import com.Carrie.challengersproject.src.main.feed.FeedFragment;
 import com.Carrie.challengersproject.src.main.mypage.follower_ing.FollowerFragment;
 import com.Carrie.challengersproject.src.main.mypage.follower_ing.FollowingFragment;

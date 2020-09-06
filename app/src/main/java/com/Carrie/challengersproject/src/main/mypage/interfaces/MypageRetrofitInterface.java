@@ -11,6 +11,5 @@ public interface MypageRetrofitInterface {
 
     @GET("/user/{userId}/mypage")
     Call<MypageResponse> GetMypageTest
-            (@Path("userId") int userId
-            );
+            (@Path("userId") int userId);
 }

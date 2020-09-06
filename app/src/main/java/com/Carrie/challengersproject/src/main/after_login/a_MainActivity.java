@@ -1,42 +1,38 @@
 package com.Carrie.challengersproject.src.main.after_login;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.Carrie.challengersproject.BaseActivity;
 import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.main.camera.CameraFragment;
-import com.Carrie.challengersproject.src.main.mypage.interfaces.MypageFragmentView;
-import com.Carrie.challengersproject.src.main.mypage.models.MypageResponse;
-import com.Carrie.challengersproject.src.main.mypage.setting.ChangeProfileFragment;
+import com.Carrie.challengersproject.src.main.mypage.setting.profile.ChangeProfileFragment;
 import com.Carrie.challengersproject.src.main.feed.FeedFragment;
+import com.Carrie.challengersproject.src.main.mypage.setting.profile.UserDeleteService;
+import com.Carrie.challengersproject.src.main.mypage.setting.profile.interfaces.UserDeleteView;
 import com.Carrie.challengersproject.src.main.new_.NewFragment;
 import com.Carrie.challengersproject.src.main.search.SearchFragment;
 import com.Carrie.challengersproject.src.main.mypage.follower_ing.FollowerFragment;
 import com.Carrie.challengersproject.src.main.mypage.follower_ing.FollowingFragment;
 import com.Carrie.challengersproject.src.main.mypage.MypageFragment;
 import com.Carrie.challengersproject.src.main.mypage.setting.SettingFragment;
-import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.Calendar;
+import static com.Carrie.challengersproject.ApplicationClass.sSharedPreferences;
 
 // 로그인 되어 있을 때 넘어 오는 액티비티
 // 액티비티 넘어 올때 로딩 등 있다. base activity 추후에 상속
-public class a_MainActivity extends AppCompatActivity {
+public class a_MainActivity extends BaseActivity  {
     BottomNavigationView bottomNavigationView;
     SearchFragment searchFragment;
     CameraFragment cameraFragment;
@@ -54,6 +50,8 @@ public class a_MainActivity extends AppCompatActivity {
     ImageButton mypage_settingbtn  ;
 
 
+//    // mypage 통신 서비스
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +64,12 @@ public class a_MainActivity extends AppCompatActivity {
         searchFragment = new SearchFragment();
         cameraFragment = new CameraFragment();
         feedFragment = new FeedFragment();
+
         mypageFragment = new MypageFragment();
+        // param 1 : fragment 삽입할 layout id , param2 : 삽입할 fragment
+        // getSupportFragmentManager().beginTransaction().add(R.id.activity_a_fl,mypageFragment);
+        //액티비티에서 통신하고 프래그 먼트에 속한 특정 UI 변화를 주는 방법으로
+
         newFragment = new NewFragment();
         settingFragment = new SettingFragment();
         changeFragment = new ChangeProfileFragment();
@@ -141,7 +144,18 @@ public class a_MainActivity extends AppCompatActivity {
         if(index == 7)
         {
             // 7번일 때는 changeprofile로
-            getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,changeFragment).commitAllowingStateLoss();
+            //1)  Activity 클래스의 getFragmentManager() 함수를 사용하여 FragmentManager 에 대한 참조를 획득한 다음
+//            2) FragmentManager 의 beginTransaction() 함수를 호출하여 FragmentTransaction 을 시작합니다.
+//            3) 그런 다음 FragmentTransaction 의 add() 함수를 이용하여 Fragment 를 Activity 의 ViewGroup(FrameLayout)에 추가
+//            4) Fragment와 관련된 모든 작업이 완료되면 FragmentTransaction의 commit() 함수를 호출하여 Fragment와 관련된 작업이 완료되었음을 알려줍니다.
+//
+//            getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,changeFragment).commitAllowingStateLoss();
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.add(R.id.activity_a_fl,changeFragment);
+            //[아직 못함] 백스택에 저장 해야한다.
+            // commit 되기 전에 이 프레그먼트에서 해야하는 것들
+            fragmentTransaction.commit();
         }
         if(index == 8)
         {
@@ -153,6 +167,5 @@ public class a_MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,followingFragment).commitAllowingStateLoss();
         }
     }
-
 
 }

@@ -18,7 +18,7 @@ public class MypageService {
     }
 
     // 마이페이지 정보 통신 부분
-    void GetMyPageIn(int id) {
+    public void GetMyPageIn(int id) {
         final MypageRetrofitInterface mypageRetrofitInterface = getRetrofit().create(MypageRetrofitInterface.class);
         mypageRetrofitInterface.GetMypageTest(id).enqueue(new Callback<MypageResponse>() {
 
