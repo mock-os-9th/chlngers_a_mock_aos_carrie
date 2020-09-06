@@ -21,6 +21,7 @@ import com.Carrie.challengersproject.src.main.mypage.setting.profile.ChangeProfi
 import com.Carrie.challengersproject.src.main.feed.FeedFragment;
 import com.Carrie.challengersproject.src.main.mypage.setting.profile.UserDeleteService;
 import com.Carrie.challengersproject.src.main.mypage.setting.profile.interfaces.UserDeleteView;
+import com.Carrie.challengersproject.src.main.mypage.setting.profile.introduce.IntroduceFragment;
 import com.Carrie.challengersproject.src.main.mypage.setting.profile.nickname.ChangeNicknameFragment;
 import com.Carrie.challengersproject.src.main.new_.NewFragment;
 import com.Carrie.challengersproject.src.main.search.SearchFragment;
@@ -48,6 +49,7 @@ public class a_MainActivity extends BaseActivity  {
     FollowerFragment followerFragment;
     FollowingFragment followingFragment;
     ChangeNicknameFragment changeNicknameFragment;
+    IntroduceFragment introduceFragment;
 
     // my_page fragment
     Fragment radarChart;
@@ -81,6 +83,7 @@ public class a_MainActivity extends BaseActivity  {
         followerFragment = new FollowerFragment();
         followingFragment = new FollowingFragment();
         changeNicknameFragment = new ChangeNicknameFragment();
+        introduceFragment = new IntroduceFragment();
 
 
         // 제일 처음 띄어줄 뷰 세팅
@@ -175,6 +178,11 @@ public class a_MainActivity extends BaseActivity  {
         {
             // 프로필 닉네임 바꾸는 프레그먼트로
             getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,changeNicknameFragment).commitAllowingStateLoss();
+        }
+        if(index == 12)
+        {
+            // 프로필 소개 바꾸는 프레그먼트로
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,introduceFragment).commitAllowingStateLoss();
         }
     }
 

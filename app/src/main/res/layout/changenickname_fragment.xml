@@ -43,6 +43,7 @@
         android:id="@+id/change_nickname_et"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:textColor="@color/colorBlack"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:hint="  닉네임"

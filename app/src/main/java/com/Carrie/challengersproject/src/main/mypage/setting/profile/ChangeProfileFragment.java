@@ -78,6 +78,13 @@ public class ChangeProfileFragment extends Fragment implements UserDeleteView {
 
 
         // 소개 누를 때 -> 소개 하로
+        Button change_indroduce = viewGroup.findViewById(R.id.change_profile_btn_introduction);
+        change_indroduce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.onChangeFragment(12);
+            }
+        });
 
         // 비밀 번호 누를 때 ->
 
