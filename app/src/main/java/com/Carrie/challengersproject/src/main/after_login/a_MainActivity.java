@@ -20,6 +20,7 @@ import com.Carrie.challengersproject.src.main.camera.CameraFragment;
 import com.Carrie.challengersproject.src.main.mypage.setting.profile.ChangeProfileFragment;
 import com.Carrie.challengersproject.src.main.feed.FeedFragment;
 import com.Carrie.challengersproject.src.main.mypage.setting.profile.UserDeleteService;
+import com.Carrie.challengersproject.src.main.mypage.setting.profile.image.ImageChangeFragment;
 import com.Carrie.challengersproject.src.main.mypage.setting.profile.interfaces.UserDeleteView;
 import com.Carrie.challengersproject.src.main.mypage.setting.profile.introduce.IntroduceFragment;
 import com.Carrie.challengersproject.src.main.mypage.setting.profile.nickname.ChangeNicknameFragment;
@@ -50,6 +51,7 @@ public class a_MainActivity extends BaseActivity  {
     FollowingFragment followingFragment;
     ChangeNicknameFragment changeNicknameFragment;
     IntroduceFragment introduceFragment;
+    ImageChangeFragment imageChangeFragment;
 
     // my_page fragment
     Fragment radarChart;
@@ -84,6 +86,7 @@ public class a_MainActivity extends BaseActivity  {
         followingFragment = new FollowingFragment();
         changeNicknameFragment = new ChangeNicknameFragment();
         introduceFragment = new IntroduceFragment();
+        imageChangeFragment = new ImageChangeFragment();
 
 
         // 제일 처음 띄어줄 뷰 세팅
@@ -184,6 +187,12 @@ public class a_MainActivity extends BaseActivity  {
             // 프로필 소개 바꾸는 프레그먼트로
             getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,introduceFragment).commitAllowingStateLoss();
         }
+        if(index == 13)
+        {
+            // 프로필 사진 바꾸는 프레그먼트로
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_a_fl,imageChangeFragment).commitAllowingStateLoss();
+        }
+
     }
 
 }

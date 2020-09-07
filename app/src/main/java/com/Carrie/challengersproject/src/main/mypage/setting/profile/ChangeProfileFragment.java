@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -89,6 +90,13 @@ public class ChangeProfileFragment extends Fragment implements UserDeleteView {
         // 비밀 번호 누를 때 ->
 
         // 사진 누를 때 -> 프로필 사진 바꾸로
+        ImageView change_Img = viewGroup.findViewById(R.id.change_profile_iv_profile);
+        change_Img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.onChangeFragment(13);
+            }
+        });
 
         return viewGroup;
     }
