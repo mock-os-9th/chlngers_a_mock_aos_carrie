@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.Carrie.challengersproject.R;
-import com.Carrie.challengersproject.src.login.LoginActivity;
+import com.Carrie.challengersproject.src.Login.LoginActivity;
 
 public class PopupInfoDialog {
     private Context context;

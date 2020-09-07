@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".src.main.before_login.b_MainActivity">
+    tools:context=".src.Main.before_login.b_MainActivity">
 
     <FrameLayout
         android:id="@+id/activity_b_fl"

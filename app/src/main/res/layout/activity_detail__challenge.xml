@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorAccent"
+    android:layout_height="match_parent"
+    tools:context="com.Carrie.challengersproject.src.Detail_Challenge.Detail_Challenge">
+
+    <ImageButton
+        android:id="@+id/detail_challenge_ib_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_chevron_left_black_24dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        />
+
+    <ImageButton
+        android:id="@+id/detail_challenge_ib_bookmark_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_bookmark_black_24dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="@id/detail_challenge_ib_back_btn"
+        app:layout_constraintBottom_toBottomOf="@id/detail_challenge_ib_back_btn"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="5dp"/>
+
+    <ImageButton
+        android:id="@+id/detail_challenge_ib_upload_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_file_upload_black_24dp"
+        android:background="@color/colorAccent"
+        android:tint="@color/colorPrimaryDark"
+        app:layout_constraintTop_toTopOf="@id/detail_challenge_ib_back_btn"
+        app:layout_constraintBottom_toBottomOf="@id/detail_challenge_ib_back_btn"
+        app:layout_constraintRight_toLeftOf="@id/detail_challenge_ib_bookmark_btn"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:id="@+id/detail_challenge_tv_go_to_pop_and_money"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/colorPrimary"
+        android:text="참가하기 (오늘 바로 시작)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
+
+    <View
+        android:id="@+id/detail_challenge_empty_view01"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toBottomOf="@id/detail_challenge_ib_bookmark_btn"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/detail_challenge_tv_go_to_pop_and_money"
+        app:layout_constraintTop_toBottomOf="@id/detail_challenge_empty_view01">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/dc_tv_today_start"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="챌린지 오늘 시작!"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/dc_iv_6pic"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/detail_challenge"
+                app:layout_constraintTop_toBottomOf="@id/dc_tv_today_start" />
+
+            <TextView
+                android:id="@+id/dc_tv_public_challenge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:drawableLeft="@drawable/ic_check_circle_black_24dp"
+                android:drawablePadding="5dp"
+                android:drawableTint="@color/colorPrimary"
+                android:text="공식 챌린지"
+                android:textColor="@color/colorPrimary"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dc_iv_6pic" />
+
+            <TextView
+                android:id="@+id/dc_tv_challenge_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="홈트 영상 보며 운동하기"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/dc_tv_public_challenge"
+                app:layout_constraintTop_toBottomOf="@id/dc_tv_public_challenge" />
+
+            <TextView
+                android:id="@+id/dc_tv_challenge_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="09/07/월 - 09/20/일"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@id/dc_tv_challenge_title"
+                app:layout_constraintTop_toBottomOf="@id/dc_tv_challenge_title" />
+
+            <TextView
+                android:id="@+id/dc_tv_challenge_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="(2주)"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/dc_tv_challenge_date"
+                app:layout_constraintTop_toTopOf="@id/dc_tv_challenge_date" />
+
+            <TextView
+                android:id="@+id/dc_tv_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="●"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="6sp"
+                app:layout_constraintBottom_toBottomOf="@id/dc_tv_challenge_period"
+                app:layout_constraintLeft_toRightOf="@id/dc_tv_challenge_period"
+                app:layout_constraintTop_toTopOf="@id/dc_tv_challenge_period" />
+
+            <TextView
+                android:id="@+id/dc_tv_challenge_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="주 4일 인정"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/dc_tv_dot"
+                app:layout_constraintTop_toTopOf="@id/dc_tv_challenge_period" />
+
+            <TextView
+                android:id="@+id/dc_tv_challengers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="도전자 수"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@id/dc_tv_challenge_date"
+                app:layout_constraintTop_toBottomOf="@id/dc_tv_challenge_date" />
+
+            <TextView
+                android:id="@+id/dc_tv_moneys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:text="모인 금액"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/dc_tv_challengers"
+                app:layout_constraintTop_toTopOf="@id/dc_tv_challengers" />
+
+            <TextView
+                android:id="@+id/dc_tv_challengers_real_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="783"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/dc_tv_challengers"
+                app:layout_constraintTop_toBottomOf="@id/dc_tv_challengers" />
+
+            <TextView
+                android:id="@+id/dc_tv_moneys_real_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="40,205,000"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/dc_tv_moneys"
+                app:layout_constraintTop_toBottomOf="@id/dc_tv_moneys" />
+
+            <TextView
+                android:id="@+id/dc_tv_check_other_challengers"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="13dp"
+                android:background="@color/colorPrimaryPressed"
+                android:gravity="center"
+                android:text="다른 도전자 확인하기"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@id/dc_tv_challengers_real_num"
+                app:layout_constraintTop_toBottomOf="@id/dc_tv_challengers_real_num" />
+
+
+            <TextView
+                android:id="@+id/dc_tv_invite_friends"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="13dp"
+                android:background="@color/colorPrimaryPressed"
+                android:gravity="center"
+                android:text="친구 초대하기"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@id/dc_tv_moneys_real_num"
+                app:layout_constraintTop_toBottomOf="@id/dc_tv_challengers_real_num" />
+
+            <view
+                android:id="@+id/dc_view_line01"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/colorGrayPressed"
+                app:layout_constraintTop_toBottomOf="@id/dc_tv_invite_friends" />
+
+            <TextView
+                android:id="@+id/dc_challenge_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="도전 후기"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dc_view_line01" />
+
+            <TextView
+                android:id="@+id/plust_hundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:text="(100+)"
+                android:textColor="@color/colorGray"
+                android:textSize="12sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/dc_challenge_comment" />
+
+            <TextView
+                android:id="@+id/star_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:text="4.99"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toLeftOf="@id/plust_hundred"
+                app:layout_constraintTop_toTopOf="@id/plust_hundred" />
+
+            <ImageView
+                android:id="@+id/dc_star_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/star_num"
+                app:layout_constraintRight_toLeftOf="@id/star_num"
+                app:layout_constraintTop_toTopOf="@id/star_num"
+                app:srcCompat="@drawable/ic_star_black_24dp" />
+
+            <TextView
+                android:id="@+id/real_comment"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/colorGrayPressed"
+                android:gravity="center"
+                android:text="미구현 뷰"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11sp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@id/dc_challenge_comment" />
+
+            <view
+                android:id="@+id/dc_view_line02"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/colorGrayPressed"
+                app:layout_constraintTop_toBottomOf="@id/real_comment" />
+
+            <TextView
+                android:id="@+id/dc_top_challenge_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지난 인증샷"
+                android:textSize="17sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/dc_view_line02"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="@id/dc_challenge_comment"/>
+
+            <ImageView
+                android:id="@+id/dc_shot_ist"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/shotimg"
+                app:layout_constraintTop_toBottomOf="@+id/dc_top_challenge_result"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/dc_show_all_shot"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintTop_toBottomOf="@id/dc_shot_ist"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:background="@color/colorGrayPressed"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:text="지난 인증샷 모두 보기"/>
+
+            <view
+                android:id="@+id/dc_view_line03"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="35dp"
+                android:backgroundTint="@color/colorGrayPressed"
+                app:layout_constraintTop_toBottomOf="@id/dc_show_all_shot" />
+
+
+            <TextView
+                android:id="@+id/dc_how_to_prove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인증 방법"
+                android:textSize="17sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/dc_view_line03"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="@id/dc_challenge_comment"/>
+
+            <TextView
+                android:id="@+id/dc_prove_date"
+                android:layout_width="120dp"
+                android:layout_height="22dp"
+                android:text="9/7/월 - 9/20/일"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/dc_how_to_prove"
+                app:layout_constraintBottom_toBottomOf="@id/dc_how_to_prove"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginLeft="20dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <TextView
+                android:id="@+id/dc_how_to_prove_line1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintTop_toBottomOf="@id/dc_how_to_prove"
+                android:layout_marginTop="20dp"
+                android:text="[홈트영상화면]과 [운동할 수 있는 바닥 또는 매트]가 같이 나온 사진 찍기 (시작할 때 1장, 끝날 때 1장)"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/dc_how_to_prove_line2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintTop_toBottomOf="@id/dc_how_to_prove_line1"
+                android:layout_marginTop="10dp"
+                android:text="갤러리 이용이 불가능합니다. 사용하시는 핸드폰 외에 다른 기기(예. 노트북, 테블릿, 다른 핸드폰 등) 으로 홈트 영상을 시청할 수 있을 때만 이 챌린지를 신청하세요"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/dc_how_to_prove_line3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintTop_toBottomOf="@id/dc_how_to_prove_line2"
+                android:layout_marginTop="10dp"
+                android:text="스텝의 판단으로 운동가능한 바닥이 아닐 경우 인정되지 않습니다.(참가자의 진행 기록을 확인하여 인정 여부를 검토)"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <view
+                android:id="@+id/dc_view_line04"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="35dp"
+                android:backgroundTint="@color/colorGrayPressed"
+                app:layout_constraintTop_toBottomOf="@id/dc_how_to_prove_line3" />
+
+            <TextView
+                android:id="@+id/dc_pic_like_this"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이렇게 찍어주세요!"
+                android:textSize="17sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/dc_view_line04"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="@id/dc_challenge_comment"/>
+
+            <ImageView
+                android:id="@+id/dc_pic01"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                app:layout_constraintTop_toBottomOf="@id/dc_pic_like_this"
+                app:layout_constraintLeft_toLeftOf="@id/dc_pic_like_this"
+                android:scaleType="fitXY"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/like_this"/>
+
+            <ImageView
+                android:id="@+id/dc_pic02"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                app:layout_constraintTop_toTopOf="@id/dc_pic01"
+                app:layout_constraintLeft_toRightOf="@id/dc_pic01"
+                android:layout_marginLeft="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/like_this2"/>
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/dc_pic01"
+                app:layout_constraintLeft_toLeftOf="@id/dc_pic01"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="[홈트영상화면]과 [운동할 수 있는 바닥 또는 매트]가 같이 나온 사진 찍기"/>
+
+            <TextView
+                android:id="@+id/dc_likepic"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/dc_pic02"
+                app:layout_constraintLeft_toLeftOf="@id/dc_pic02"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="[홈트영상화면]과 [운동할 수 있는 바닥 또는 매트]가 같이 나온 사진 찍기"/>
+
+            <view
+
+                android:id="@+id/dc_view_line05"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="35dp"
+                android:backgroundTint="@color/colorGrayPressed"
+                app:layout_constraintTop_toBottomOf="@id/dc_likepic" />
+
+            <TextView
+                android:id="@+id/dc_ask"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:text="궁금한 점이 있나요?"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/dc_view_line05"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorGrayPressed"
+                android:text="FAQ"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                app:layout_constraintTop_toBottomOf="@id/dc_ask"
+                android:gravity="center"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

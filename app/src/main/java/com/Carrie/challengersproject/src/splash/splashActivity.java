@@ -8,8 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.Carrie.challengersproject.R;
-import com.Carrie.challengersproject.src.main.after_login.a_MainActivity;
-import com.Carrie.challengersproject.src.main.before_login.b_MainActivity;
+import com.Carrie.challengersproject.src.Main.after_login.a_MainActivity;
+import com.Carrie.challengersproject.src.Main.before_login.b_MainActivity;
 
 
 public class splashActivity extends AppCompatActivity {

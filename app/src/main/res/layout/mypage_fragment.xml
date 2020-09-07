@@ -225,7 +225,7 @@
                         android:id="@+id/myPage_fragment_tv_following"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/mypage_followers"
+                        android:text="팔로잉"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="11sp"
                         android:gravity="center_horizontal"

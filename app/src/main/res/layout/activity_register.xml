@@ -31,7 +31,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context="com.Carrie.challengersproject.src.login.LoginActivity">
+            tools:context="com.Carrie.challengersproject.src.Login.LoginActivity">
 
             <TextView
                 android:id="@+id/Register_tv_title"
