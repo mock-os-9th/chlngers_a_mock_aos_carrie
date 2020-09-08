@@ -16,7 +16,7 @@ public interface LoginRetrofitInterface {
     Call<LoginResponse> signInTest(@Body LoginBody params);
 
     //SNS 로그인
-    @POST("/snsLogin/{snsName}")
+    @POST("/login/{snsName}")
     Call<SnsLoginResponse> snsSignInTest(
             @Body SnsLoginBody params,
             @Path("snsName") String sns_name

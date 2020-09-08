@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface SearchRetrofitInterface {
 
-    @GET("/challengeSearch")
+    @GET("/challenges")
     Call<SearchResponse> getSearchTest();
 }

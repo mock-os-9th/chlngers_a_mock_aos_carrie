@@ -1,6 +1,7 @@
 package com.Carrie.challengersproject.src.Search_Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -20,6 +21,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.Carrie.challengersproject.R;
+import com.Carrie.challengersproject.src.Detail_Challenge.Detail_Challenge;
 import com.Carrie.challengersproject.src.Main.after_login.a_MainActivity;
 import com.Carrie.challengersproject.src.Search_Fragment.interfaces.SearchActivityView;
 import com.Carrie.challengersproject.src.Search_Fragment.models.SearchResponse;
@@ -40,7 +42,9 @@ public class SearchFragment extends Fragment implements SearchActivityView {
     a_MainActivity mainActivity;
 
     private Challenge_Adapter mAdapter;
-    private Challenge_Adapter mAdapter1; private Challenge_Adapter mAdapter2; private Challenge_Adapter mAdapter3;
+    private Challenge_Adapter mAdapter1;
+    private Challenge_Adapter mAdapter2;
+    private Challenge_Adapter mAdapter3;
 
     ViewPager viewPager;
     int images[] ={R.drawable.banner01, R.drawable.banner02};
@@ -101,31 +105,9 @@ public class SearchFragment extends Fragment implements SearchActivityView {
         mArrayList = new ArrayList<>();
         String temp = sSharedPreferences.getString(X_ACCESS_TOKEN,"null");
         Log.d("searchPage_jwt",temp);
+
+        // 통신
         tryGetSearchTest();
-        //dummy
-//        for(int i = 0; i<2; i++)
-//        {
-//            Challenge_Item challenge_item = new Challenge_Item
-//            ("https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png",
-//            "경제기사 읽기",
-//            "4.98"
-//            ,"현재 106명 신청",
-//            " 8/31/월 - 9/13/일",
-//            " 2주 ",
-//            "주 3일");
-//            Challenge_Item challenge_item1 = new Challenge_Item("https://cdn.pixabay.com/photo/2019/08/06/02/16/mountains-4387209_960_720.jpg","아침 8시 일어나기","4.98"
-//                    ,"현재 1002명 신청"," 8/31/월 - 9/27/일"," 4주 ","주 7일");
-//
-//            mArrayList.add(challenge_item);
-//            mArrayList.add(challenge_item1);
-//        }
-//        mAdapter = new Challenge_Adapter(mArrayList);
-//        recyclerView.setAdapter(mAdapter);
-//        recyclerView1.setAdapter(mAdapter);
-//        recyclerView2.setAdapter(mAdapter);
-//        recyclerView3.setAdapter(mAdapter);
-//        mAdapter.notifyDataSetChanged();
-//
 
         viewPager = viewGroup.findViewById(R.id.search_fm_banner);
         BannerAdpater bannerAdpater = new BannerAdpater(getContext(),images);
@@ -135,12 +117,6 @@ public class SearchFragment extends Fragment implements SearchActivityView {
                 linearLayoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
 
-//        mAdapter.setOnItemClickListener(new Challenge_Adapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(View v, int pos) {
-//                //아이템 클릭시
-//            }
-//        });
         return viewGroup;
     }
 
@@ -190,7 +166,7 @@ public class SearchFragment extends Fragment implements SearchActivityView {
     }
 
     @Override
-    public void SearchSuccess(SearchResponse searchResponse) {
+    public void SearchSuccess(final SearchResponse searchResponse) {
         Log.d("SearchSuccess",searchResponse.getMessage());
 
         recommend_list = new ArrayList<>();
@@ -289,6 +265,13 @@ public class SearchFragment extends Fragment implements SearchActivityView {
             @Override
             public void onItemClick(View v, int pos) {
                 // 추천 클릭시 > 상세 페이지로
+                Intent intent = new Intent(mainActivity, Detail_Challenge.class);
+                int challenge_id = searchResponse.getSearch().get(7).getChallenges().get(pos).getChallengeId();
+                // 상세 페이지로 갔을 때, 이 클릭한 아이템의 정보를 찾을 수 있어야 해서 일단 이
+                // 어레이 에서 인덱스 정보를 넘기고 아마 상세 페이지에서도 이 API 를 호출해서 해당 챌린지 아이디를 찾고 아이디로 접근해서 찾아야겠다.
+                intent.putExtra("챌린지아이디",challenge_id);
+                startActivity(intent);
+                mainActivity.finish();
             }
         });
 
@@ -296,6 +279,11 @@ public class SearchFragment extends Fragment implements SearchActivityView {
             @Override
             public void onItemClick(View v, int pos) {
                 // 운동 클릭시
+                Intent intent = new Intent(mainActivity, Detail_Challenge.class);
+                int challenge_id = searchResponse.getSearch().get(0).getChallenges().get(pos).getChallengeId();
+                intent.putExtra("챌린지아이디",challenge_id);
+                startActivity(intent);
+                mainActivity.finish();
             }
         });
 
@@ -303,6 +291,11 @@ public class SearchFragment extends Fragment implements SearchActivityView {
             @Override
             public void onItemClick(View v, int pos) {
                 // 공부 클릭시
+                Intent intent = new Intent(mainActivity, Detail_Challenge.class);
+                int challenge_id = searchResponse.getSearch().get(5).getChallenges().get(pos).getChallengeId();
+                intent.putExtra("챌린지아이디",challenge_id);
+                startActivity(intent);
+                mainActivity.finish();
             }
         });
 
@@ -310,6 +303,11 @@ public class SearchFragment extends Fragment implements SearchActivityView {
             @Override
             public void onItemClick(View v, int pos) {
                 // 역량 클릭시
+                Intent intent = new Intent(mainActivity, Detail_Challenge.class);
+                int challenge_id = searchResponse.getSearch().get(3).getChallenges().get(pos).getChallengeId();
+                intent.putExtra("챌린지아이디",challenge_id);
+                startActivity(intent);
+                mainActivity.finish();
             }
         });
         mAdapter.notifyDataSetChanged();
