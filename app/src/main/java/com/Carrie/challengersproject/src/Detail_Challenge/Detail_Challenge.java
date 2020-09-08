@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.Carrie.challengersproject.R;
@@ -14,6 +15,7 @@ import com.Carrie.challengersproject.src.Detail_Challenge.interfaces.DetailActiv
 import com.Carrie.challengersproject.src.Detail_Challenge.models.DetailResponse;
 import com.Carrie.challengersproject.src.Main.after_login.a_MainActivity;
 import com.Carrie.challengersproject.src.Payment.PaymentActivity;
+import com.bumptech.glide.Glide;
 
 public class Detail_Challenge extends AppCompatActivity implements DetailActivityView {
 
@@ -25,6 +27,7 @@ public class Detail_Challenge extends AppCompatActivity implements DetailActivit
     TextView score;
     TextView challengercount;
     TextView gatheramount;
+    ImageView topimg;
 
 
 
@@ -34,7 +37,7 @@ public class Detail_Challenge extends AppCompatActivity implements DetailActivit
         setContentView(R.layout.activity_detail__challenge);
 
         Intent intent = getIntent();
-        int get_challege_id_from_before_activity = intent.getIntExtra("챌린지아이디",0);
+        final int get_challege_id_from_before_activity = intent.getIntExtra("챌린지아이디",0);
         Log.d("넘어온 챌린지 아이디",String.valueOf(get_challege_id_from_before_activity));
         tryDetailIn(get_challege_id_from_before_activity); // 통신 후 성공하면, 뷰에 필요 값들 넣어 준다.
 
@@ -55,6 +58,7 @@ public class Detail_Challenge extends AppCompatActivity implements DetailActivit
             public void onClick(View v) {
                 // 결제 화면으로 넘어가야 한다.
                 Intent intent = new Intent(Detail_Challenge.this, PaymentActivity.class);
+                intent.putExtra("챌린지아이디",get_challege_id_from_before_activity);
                 startActivity(intent);
                 finish();
             }
@@ -69,6 +73,7 @@ public class Detail_Challenge extends AppCompatActivity implements DetailActivit
         score= findViewById(R.id.star_num);
         challengercount= findViewById(R.id.dc_tv_challengers_real_num);
         gatheramount = findViewById(R.id.dc_tv_moneys_real_num);
+        topimg = findViewById(R.id.dc_iv_6pic);
         // 사용자가 클릭한 챌린지 정보에 따라 setText 등이 필요하다.
     }
 
@@ -89,6 +94,9 @@ public class Detail_Challenge extends AppCompatActivity implements DetailActivit
         c_challengercount = String.valueOf(detailResponse.getChallengerCount());
         g_gatheramount = String.valueOf(detailResponse.getGatheredAmount());
 
+//        String img_url = detailResponse.getImageUrl();
+        //        Glide.with(this).load(img_url).into(topimg);
+
         title.setText(t_title);
         period.setText(p_period);
         week.setText(w_week);
@@ -96,6 +104,7 @@ public class Detail_Challenge extends AppCompatActivity implements DetailActivit
         score.setText(s_score);
         challengercount.setText(c_challengercount);
         gatheramount.setText(g_gatheramount);
+
     }
 
     @Override

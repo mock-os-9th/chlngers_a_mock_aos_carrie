@@ -4,7 +4,7 @@ import com.Carrie.challengersproject.src.Mypage_Fragment.models.MypageResponse;
 
 public interface MypageFragmentView {
 
-    void MyPageGetSuccess(MypageResponse.MypageInfo mypageInfo);
+    void MyPageGetSuccess(MypageResponse mypageResponse);
 
     void MyPageGetFailure(String message);
 }

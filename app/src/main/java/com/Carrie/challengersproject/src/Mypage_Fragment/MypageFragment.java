@@ -1,6 +1,7 @@
 package com.Carrie.challengersproject.src.Mypage_Fragment;
 
 import android.content.Context;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.Carrie.challengersproject.src.Main.after_login.a_MainActivity;
 import com.Carrie.challengersproject.src.Mypage_Fragment.interfaces.MypageFragmentView;
 import com.Carrie.challengersproject.src.Mypage_Fragment.models.MypageResponse;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -31,7 +33,6 @@ import com.github.mikephil.charting.data.RadarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import static com.Carrie.challengersproject.ApplicationClass.sSharedPreferences;
 
@@ -157,6 +158,7 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
         calendarView = viewGroup.findViewById(R.id.myPage_fragment_cv_calender);
 
         TryGetMypage();
+
         return viewGroup;
     }
 
@@ -193,59 +195,49 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
         mypageService.GetMyPageIn(id);
         Log.e("아이디",String.valueOf(id));
     }
+
     @Override
-    public void MyPageGetSuccess(MypageResponse.MypageInfo mypageInfo) {
-        // 성공시
-        String profileUrl = mypageInfo.getProfileImageUrl();
-        Glide.with(this).load(profileUrl).into(profileImg);
+    public void MyPageGetSuccess(MypageResponse mypageResponse) {
 
-        nickname.setText(mypageInfo.getNickname());
-        if(mypageInfo.getGradeName() == "Red"){grade.setHighlightColor(Color.RED);}
-        else if(mypageInfo.getGradeName() == "Orange"){grade.setHighlightColor(Color.RED);}
-        else if(mypageInfo.getGradeName() == "Yellow"){grade.setHighlightColor(Color.YELLOW);}
-        else if(mypageInfo.getGradeName() == "Green"){grade.setHighlightColor(Color.GREEN);}
-        else if(mypageInfo.getGradeName() == "Sky"){grade.setHighlightColor(Color.BLUE);}
-        else if(mypageInfo.getGradeName() == "Blue"){grade.setHighlightColor(Color.BLUE);}
-        else if(mypageInfo.getGradeName() == "Purple"){grade.setHighlightColor(Color.BLACK);}
-        else if(mypageInfo.getGradeName() == "Black"){grade.setHighlightColor(Color.BLACK);}
+        // 아래 내용들 리스폰스에서 받아 온 값으로 넣어주기
+        String img_url = mypageResponse.getMyPageInfo().getProfileImageUrl();
+        Glide.with(this).load(img_url).override(100,100).apply(new RequestOptions().circleCrop()).into(profileImg);
 
-        reward.setText(String.valueOf(mypageInfo.getReward()));
-        follower_count.setText(String.valueOf(mypageInfo.getFollowerCount()));
-        follwing_count.setText(String.valueOf(mypageInfo.getFollowingCount()));
+        String n_nickname = mypageResponse.getMyPageInfo().getNickname();
+        nickname.setText(n_nickname);
 
-        String setT="";
-
-        for(int i = 0; i<mypageInfo.getInterestFields().size(); i++)
+        String level_color = mypageResponse.getMyPageInfo().getGradeName();
+        if(level_color.equals("Red"))
         {
-            if(i ==0)
-            {
-                setT += ("#"+mypageInfo.getInterestFields().get(i));
-                Log.e("관심분야",setT);
-            }
-            else
-            {
-                setT += (", #" + mypageInfo.getInterestFields().get(i));
-                Log.e("관심분야",setT);
-            }
+            grade.setHighlightColor(Color.RED);
         }
 
-        Log.e("관심분야",setT);
-        interest_field.setText(setT);
+        String r_reward = String.valueOf(mypageResponse.getMyPageInfo().getReward());
+        reward.setText(r_reward);
+
+        String fer_count = String.valueOf(mypageResponse.getMyPageInfo().getFollowerCount());
+        follower_count.setText(fer_count);
+
+        String fng_count = String.valueOf(mypageResponse.getMyPageInfo().getFollowingCount());
+        follwing_count.setText(fng_count);
+
+        String total_field = "";
+        for(int i = 0; i<mypageResponse.getMyPageInfo().getInterestFields().size(); i++)
+        {
+            total_field+="#";
+            total_field+=mypageResponse.getMyPageInfo().getInterestFields().get(i);
+            total_field+=", ";
+
+        }
+
+        interest_field.setText(total_field);
 
 
-        Calendar cal = Calendar.getInstance();
-        Log.d("마이페이지 조회 성공","성공");
-
-//        for(int i = 0; i<mypageInfo.getEverydayRecords().size();i++)
-//        {
-//
-//        }
-//        DATE_FORMAT;
+        // calendarView = viewGroup.findViewById(R.id.myPage_fragment_cv_calender);
     }
 
     @Override
     public void MyPageGetFailure(String message) {
-        // 실패시
-        Log.d("마이페이지 조회 실패",message);
+
     }
 }

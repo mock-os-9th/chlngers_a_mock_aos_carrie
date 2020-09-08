@@ -1,5 +1,7 @@
 package com.Carrie.challengersproject.src.Mypage_Fragment;
 
+import android.util.Log;
+
 import com.Carrie.challengersproject.src.Mypage_Fragment.interfaces.MypageFragmentView;
 import com.Carrie.challengersproject.src.Mypage_Fragment.interfaces.MypageRetrofitInterface;
 import com.Carrie.challengersproject.src.Mypage_Fragment.models.MypageResponse;
@@ -22,25 +24,25 @@ public class MypageService {
     public void GetMyPageIn(int id) {
         final MypageRetrofitInterface mypageRetrofitInterface = getRetrofit().create(MypageRetrofitInterface.class);
         mypageRetrofitInterface.GetMypageTest(id).enqueue(new Callback<MypageResponse>() {
-
-            // 필요할 때 복붙해서 쓰세요요 - 비동기 호출 (물 흐르듯 위에서 아래로 흐르지 않음) - 비동기 오류를 겪을 수도 있다.
             @Override
             public void onResponse(Call<MypageResponse> call, Response<MypageResponse> response) {
                 // 성공시에 돈다.
                 final MypageResponse mypageResponse = response.body();
                 if (mypageResponse == null) {
-                    // 이게 어디로 갈까? mainactivtiy에 있는 validateFailure로 간다.
-                    mMypageFragmentView.MyPageGetFailure("실패-null");
+                    mMypageFragmentView.MyPageGetFailure("0");
+                    Log.d("마이페이지 통신 실패"," 결과 값 null (통신은 함)");
                     return;
                 }
                 // 성공시 mypafeResponse 의 Info 정보 부분
-                mMypageFragmentView.MyPageGetSuccess(mypageResponse.getMyPageInfo());
+                mMypageFragmentView.MyPageGetSuccess(mypageResponse);
+                Log.d("마이페이지 통싱 성공","성공!");
             }
 
             // API 통신이 실패했을 때 오는 곳 - 비동기 호출
             @Override
             public void onFailure(Call<MypageResponse> call, Throwable t) {
                 mMypageFragmentView.MyPageGetFailure("실패실패");
+                Log.d("마이페이지 통신 실패"," 통신 자체를 못함");
             }
         });
     }

@@ -20,7 +20,7 @@ public class DetailService {
         this.detailActivityView = detailActivityView;
     }
 
-    void getDetailResult(int challenge_id) {
+    public void getDetailResult(int challenge_id) {
         final DetialRetrofitInterface detialRetrofitInterface = getRetrofit().create(DetialRetrofitInterface.class);
         detialRetrofitInterface.getDetailChallengeTest(challenge_id).enqueue(new Callback<DetailResponse>() {
 
