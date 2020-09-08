@@ -59,6 +59,7 @@ public class ChangeNicknameFragment extends Fragment implements NicknameChangeVi
         final TextView nickname_alert_msg = viewGroup.findViewById(R.id.change_nickname_alert_text);
         final EditText nickname_enter = viewGroup.findViewById(R.id.change_nickname_et);
 
+
         nickname_enter.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

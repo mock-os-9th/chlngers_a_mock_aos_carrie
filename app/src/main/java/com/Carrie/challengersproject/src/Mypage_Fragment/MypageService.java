@@ -16,7 +16,7 @@ public class MypageService {
 
     private final MypageFragmentView mMypageFragmentView;
 
-    MypageService(final MypageFragmentView mMypageFragmentView) {
+    public MypageService(final MypageFragmentView mMypageFragmentView) {
         this.mMypageFragmentView = mMypageFragmentView;
     }
 

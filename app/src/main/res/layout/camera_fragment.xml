@@ -7,14 +7,139 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/certify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/yet_dev_page"
-        android:textColor="@color/colorPrimary"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="인증"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_marginTop="25dp"/>
+
+    <ImageButton
+        android:id="@+id/certify_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/ic_notifications_none_black_24dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@id/certify"
+        android:layout_marginRight="20dp"/>
+
+    <ImageButton
+        android:id="@+id/certify_alerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/certify_notification"
+        app:srcCompat="@drawable/ic_add_alarm_black_24dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@id/certify"
+        android:layout_marginRight="20dp"/>
+
+    <View
+        android:id="@+id/certify_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintTop_toBottomOf="@id/certify"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/certify_tv_possible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="인증가능"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/certify_view"
+        app:layout_constraintRight_toLeftOf="@id/certify"
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/certify_tv_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전체"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintTop_toBottomOf="@id/certify_view"
+        app:layout_constraintLeft_toRightOf="@id/certify_tv_possible"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/certify_tv_all"
+        app:layout_constraintRight_toLeftOf="@id/certify_tv_real_num_won"
+        android:gravity="right|center_vertical"
+        android:layout_marginTop="20dp"
+        android:text="누적 "
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:background="@color/colorGrayPressed"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/certify_tv_all"
+        app:layout_constraintLeft_toRightOf="@id/certify_tv_real_num_won"
+        android:gravity="left|center_vertical"
+        android:layout_marginTop="20dp"
+        android:text="원 확보!"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:background="@color/colorGrayPressed"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/certify_tv_real_num_won"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="0"
+        app:layout_constraintLeft_toLeftOf="@id/certify"
+        app:layout_constraintTop_toBottomOf="@id/certify_tv_all"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:background="@color/colorGrayPressed"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/certify_et_search"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="인증하실 챌린지를 검색해 보세요."
+        android:drawableLeft="@drawable/ic_search_black_12dp"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/certify_tv_real_num_won"
+        android:background="@color/colorAccent"
+        android:textColorHint="@color/colorGray"
+        android:textSize="12sp"/>
+
+    <View
+        android:id="@+id/certify_empty"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/certify_et_search"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/certify_empty"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

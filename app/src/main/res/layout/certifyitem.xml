@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <LinearLayout
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_width="match_parent"
+       android:background="@color/colorAccent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
+       <LinearLayout
+           android:padding="12dp"
+           android:layout_weight="3"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="[하루도전] 할일 3가지 쓰기"
+               android:textColor="@color/colorBlack"
+               android:textStyle="bold"
+               android:textSize="16sp"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="2020.09.09(수) - 09.09(수)"
+               android:textColor="@color/colorPrimaryDark"
+               android:layout_marginTop="5dp"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="매일"
+               android:textColor="@color/colorPrimaryDark"
+               android:layout_marginTop="5dp"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="00:00:00-00:00:00"
+               android:textColor="@color/colorPrimaryDark"
+               android:layout_marginTop="5dp"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="달성률: 0.0%"
+               android:textColor="@color/colorPrimaryDark"
+               android:layout_marginTop="5dp"/>
+           <TextView
+               android:layout_marginTop="5dp"
+               android:layout_width="30dp"
+               android:layout_height="30dp"
+               android:background="@color/colorGrayPressed"
+               android:text="1"
+               android:gravity="center"
+               android:textSize="14sp"/>
+
+       </LinearLayout>
+
+       <ImageButton
+           android:layout_gravity="center"
+           android:layout_weight="7"
+           android:layout_width="match_parent"
+           android:layout_height="160dp"
+           android:src="@drawable/dummy_img"
+           android:scaleType="fitXY"/>
+
+   </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -201,7 +201,7 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
 
         // 아래 내용들 리스폰스에서 받아 온 값으로 넣어주기
         String img_url = mypageResponse.getMyPageInfo().getProfileImageUrl();
-        Glide.with(this).load(img_url).override(100,100).apply(new RequestOptions().circleCrop()).into(profileImg);
+        Glide.with(this).load(img_url).apply(new RequestOptions().circleCrop()).into(profileImg);
 
         String n_nickname = mypageResponse.getMyPageInfo().getNickname();
         nickname.setText(n_nickname);

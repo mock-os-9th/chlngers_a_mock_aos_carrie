@@ -46,6 +46,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="45dp"
+        android:paddingHorizontal="15dp"
         android:textSize="11sp"
         android:hint="본인 소개를 입력해주세요."
         android:gravity="left|top"

@@ -32,33 +32,7 @@ public class b_MypageFragment extends Fragment  {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        viewGroup = (ViewGroup) inflater.inflate(R.layout.mypage_fragment,container,false);
-        ImageButton setting_btn = viewGroup.findViewById(R.id.myPage_fragment_ib_setting);
-        setting_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.onChangeFragment(5);
-            }
-        });
-
-//        TextView follower_btn = viewGroup.findViewById(R.id.myPage_fragment_tv_follower);
-//        follower_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mainActivity.onChangeFragment(8);
-//            }
-//        });
-//
-//        TextView following_btn = viewGroup.findViewById(R.id.myPage_fragment_tv_following);
-//        following_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mainActivity.onChangeFragment(9);
-//            }
-//        });
-
-
-
+        viewGroup = (ViewGroup) inflater.inflate(R.layout.empty,container,false);
         return viewGroup;
     }
 }

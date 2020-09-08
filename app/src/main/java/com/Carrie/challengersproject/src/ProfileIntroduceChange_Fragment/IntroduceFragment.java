@@ -55,6 +55,7 @@ public class IntroduceFragment extends Fragment implements IntroduceChangeView {
         final EditText introduce_edit = viewGroup.findViewById(R.id.change_introduce_et);
 
 
+
         // 완료 텍스트 뷰 버튼
         TextView finish_btn = viewGroup.findViewById(R.id.change_introduce_tv_complete_btn);
         finish_btn.setOnClickListener(new View.OnClickListener() {
