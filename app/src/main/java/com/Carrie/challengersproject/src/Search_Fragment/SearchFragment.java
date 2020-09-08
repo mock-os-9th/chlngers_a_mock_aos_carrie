@@ -29,6 +29,9 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.Carrie.challengersproject.ApplicationClass.X_ACCESS_TOKEN;
+import static com.Carrie.challengersproject.ApplicationClass.sSharedPreferences;
+
 
 public class SearchFragment extends Fragment implements SearchActivityView {
 
@@ -96,7 +99,8 @@ public class SearchFragment extends Fragment implements SearchActivityView {
         recyclerView3.setLayoutManager(linearLayoutManager3);
 
         mArrayList = new ArrayList<>();
-
+        String temp = sSharedPreferences.getString(X_ACCESS_TOKEN,"null");
+        Log.d("searchPage_jwt",temp);
         tryGetSearchTest();
         //dummy
 //        for(int i = 0; i<2; i++)

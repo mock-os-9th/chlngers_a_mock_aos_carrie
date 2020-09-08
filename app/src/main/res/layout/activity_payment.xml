@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.Carrie.challengersproject.src.Payment.PaymentActivity">
+
+    <ImageView
+        android:id="@+id/payment_ib_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_chevron_left_black_24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp"
+        android:tint="@color/colorPrimaryDark"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/payment_ib_back_btn"
+        app:layout_constraintTop_toTopOf="@id/payment_ib_back_btn"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:text="참가 신청"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/payment_tv_pay_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/colorPrimary"
+        android:text="20,000원 결제하기"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="590dp"
+        app:layout_constraintTop_toBottomOf="@+id/payment_ib_back_btn"
+        app:layout_constraintBottom_toTopOf="@id/payment_tv_pay_btn"
+        android:layout_marginTop="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/payment_tv_until_start"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:text="챌린지 시작까지"
+                android:gravity="center|right"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/payment_tv_until_start_timer"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:text="   5일 8시간 50분 1초"
+                android:textStyle="bold"
+                android:gravity="center|left"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toTopOf="@id/payment_tv_until_start"
+                app:layout_constraintLeft_toRightOf="@id/payment_tv_until_start"/>
+
+            <ImageView
+                android:id="@+id/payment_iv_challenge_img"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_until_start_timer"
+                android:src="@drawable/dummy_img"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/payment_tv_public_challenge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:drawableLeft="@drawable/ic_check_circle_black_24dp"
+                android:drawablePadding="5dp"
+                android:drawableTint="@color/colorPrimary"
+                android:text="공식 챌린지"
+                android:textColor="@color/colorPrimary"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/payment_iv_challenge_img" />
+
+            <TextView
+                android:id="@+id/payment_tv_challenge_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="홈트 영상 보며 운동하기"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/payment_tv_public_challenge"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_public_challenge" />
+
+            <TextView
+                android:id="@+id/payment_tv_challenge_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="09/07/월 - 09/20/일"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@id/payment_tv_challenge_title"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_challenge_title" />
+
+            <TextView
+                android:id="@+id/payment_challenge_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="(2주)"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/payment_tv_challenge_date"
+                app:layout_constraintTop_toTopOf="@id/payment_tv_challenge_date" />
+
+            <TextView
+                android:id="@+id/payment_tv_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="●"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="6sp"
+                app:layout_constraintBottom_toBottomOf="@id/payment_challenge_period"
+                app:layout_constraintLeft_toRightOf="@id/payment_challenge_period"
+                app:layout_constraintTop_toTopOf="@id/payment_challenge_period" />
+
+            <TextView
+                android:id="@+id/payment_tv_challenge_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="주 4일 인정"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/payment_tv_dot"
+                app:layout_constraintTop_toTopOf="@id/payment_challenge_period" />
+
+            <TextView
+                android:id="@+id/payment_tv_challengers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="도전자 수"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@id/payment_tv_challenge_date"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_challenge_date" />
+
+            <TextView
+                android:id="@+id/payment_tv_moneys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:text="모인 금액"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/payment_tv_challengers"
+                app:layout_constraintTop_toTopOf="@id/payment_tv_challengers" />
+
+            <TextView
+                android:id="@+id/payment_tv_challengers_real_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="783"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/payment_tv_challengers"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_challengers" />
+
+            <TextView
+                android:id="@+id/payment_tv_moneys_real_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="40,205,000"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/payment_tv_moneys"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_moneys" />
+
+            <TextView
+                android:id="@+id/payment_tv_participate_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="참가비"
+                android:textSize="16sp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_marginTop="40dp"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_challengers_real_num"
+                app:layout_constraintLeft_toLeftOf="@id/payment_tv_challengers_real_num"/>
+
+            <RadioGroup
+                android:id="@+id/payment_radio_group"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_participate_money"
+                app:layout_constraintLeft_toLeftOf="@id/payment_tv_participate_money"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <RadioButton
+                    android:id="@+id/payment_radio_btn_10000"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="만원 단위"
+                    android:textColor="@color/colorBlack"
+                    android:buttonTint="@color/colorPrimary"
+                    android:textSize="12sp"/>
+
+                <RadioButton
+                    android:id="@+id/payment_radio_btn_5000"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="5,000원"
+                    android:buttonTint="@color/colorPrimary"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/payment_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="최소 1만원, 최대 20만원 입니다."
+                android:textSize="9sp"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/payment_radio_group"
+                app:layout_constraintLeft_toLeftOf="@id/payment_tv_participate_money"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:id="@+id/payment_et_enter_participate_money"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:hint="참가비 입력"
+                android:textColorHint="@color/colorGray"
+                android:text="만원    "
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                app:layout_constraintTop_toBottomOf="@id/payment_info"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/primary_edit_text"
+                android:gravity="end|center_vertical" />
+
+            <TextView
+                android:id="@+id/payment_info2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/payment_et_enter_participate_money"
+                app:layout_constraintLeft_toLeftOf="@id/payment_et_enter_participate_money"
+                app:layout_constraintRight_toRightOf="@id/payment_et_enter_participate_money"
+                android:text="Tip. 챌린지가 끝나면 최종 달성률에 비례해 전액/부분 환급됩니다!"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+
+            <TextView
+                android:id="@+id/payment_empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/payment_info2"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGrayPressed"/>
+
+            <TextView
+                android:id="@+id/payment_result_total_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="최종 결제금액"
+                android:textSize="16sp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/payment_empty_view"
+                app:layout_constraintLeft_toLeftOf="@id/payment_tv_participate_money"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/payment_tv_enter_participate_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="참가비"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/payment_result_total_money"
+                app:layout_constraintLeft_toLeftOf="@id/payment_result_total_money"
+                android:layout_marginTop="25sp"/>
+
+            <TextView
+                android:id="@+id/payment_tv_enter_participate_money_real_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10,000 원"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/payment_result_total_money"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="25sp"/>
+
+            <TextView
+                android:id="@+id/payment_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_enter_participate_money"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/payment_tv_enter_result_participate_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="최종 결제액"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/payment_line"
+                app:layout_constraintLeft_toLeftOf="@id/payment_result_total_money"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/payment_tv_enter_result_participate_money_real_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10,000 원"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintTop_toTopOf="@id/payment_tv_enter_result_participate_money"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="20dp" />
+
+            <LinearLayout
+                android:id="@+id/payment_linear_contains_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/payment_tv_enter_result_participate_money_real_num"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/payment_kakaopay"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/primary_edit_text"
+                    android:text="카카오페이"
+                    android:textColor="@color/colorPrimary"/>
+                <Button
+                    android:id="@+id/payment_credit"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/primary_edit_text"
+                    android:text="신용/체크카드"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/colorPrimary"/>
+                <Button
+                    android:id="@+id/payment_account_Transfer"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/primary_edit_text"
+                    android:text="계좌이체"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/payment_info3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="챌린지 취소규정 참가규칙 이용약관에 동의하며 표기된 금액을 결제하는데 동의합니다."
+                android:textSize="9sp"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/payment_linear_contains_buttons"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

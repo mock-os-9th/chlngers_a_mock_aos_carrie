@@ -286,12 +286,38 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
     @Override
     public void SNSLogInSuccess(String jwt, int id) {
         hideProgressDialog();
-        // sharedpreference에 jwt 저장
-        String x_access = sSharedPreferences.getString(X_ACCESS_TOKEN,null);
+
+        sSharedPreferences = getSharedPreferences(TAG,MODE_PRIVATE);
         SharedPreferences.Editor editor = sSharedPreferences.edit();
-        editor.putInt("ID",id);
+
+        editor.remove(X_ACCESS_TOKEN);
         editor.commit();
-        Log.d("SNS 로그인 성공",x_access);
+
+        sSharedPreferences = getSharedPreferences(TAG,MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = sSharedPreferences.edit();
+        editor2.putString(X_ACCESS_TOKEN,jwt);
+        editor2.commit();
+
+//        trySnsLogIn(jwt,"kakao");
+          String x_access = sSharedPreferences.getString(X_ACCESS_TOKEN,null);
+
+          editor.putInt("ID",id);
+          Log.d("SNS 로그인 성공",x_access);
+        // sharedpreference에 jwt 저장
+
+//        editor.remove(X_ACCESS_TOKEN);
+//        editor.commit();
+//
+//        sSharedPreferences = getSharedPreferences(TAG,MODE_PRIVATE);
+//        SharedPreferences.Editor editor2 = sSharedPreferences.edit();
+//        editor2.putString(X_ACCESS_TOKEN,jwt);
+//        editor2.commit();
+//
+//        trySnsLogIn(jwt,"kakao");
+//        String x_access = sSharedPreferences.getString(X_ACCESS_TOKEN,null);
+//
+//        editor.putInt("ID",id);
+//        Log.d("SNS 로그인 성공",x_access);
         // 인텐트로 메인 화면 넘겨줌.
 //        Intent intent = new Intent(LoginActivity.this, a_MainActivity.class);
 //        startActivity(intent);
