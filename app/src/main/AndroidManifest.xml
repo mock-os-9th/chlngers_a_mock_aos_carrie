@@ -18,10 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".src.Payment.PaymentActivity">
-        </activity>
-        <activity android:name=".src.Detail_Challenge.Detail_Challenge" >
-        </activity>
+        <activity android:name=".src.HowCertify.HowCertifyActivity"></activity>
+        <activity android:name=".src.Payment.PaymentActivity"></activity>
+        <activity android:name=".src.Detail_Challenge.Detail_Challenge"></activity>
         <activity android:name=".src.reset_pw.ResetPwActivity" />
         <activity android:name=".src.find_email.FindEmailActivity" /> <!-- 페이스북 메타 데이터 -->
         <meta-data

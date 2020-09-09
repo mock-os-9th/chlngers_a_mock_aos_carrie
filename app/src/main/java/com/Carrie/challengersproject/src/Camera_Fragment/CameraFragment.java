@@ -1,6 +1,7 @@
 package com.Carrie.challengersproject.src.Camera_Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.Camera_Fragment.interfaces.MyCertifyView;
 import com.Carrie.challengersproject.src.Camera_Fragment.models.MyCertifyResponse;
+import com.Carrie.challengersproject.src.HowCertify.HowCertifyActivity;
 import com.Carrie.challengersproject.src.Main.after_login.a_MainActivity;
 
 import java.util.ArrayList;
@@ -121,7 +123,10 @@ public class CameraFragment extends Fragment implements MyCertifyView {
         myCertifyChallengeAdapter.setOnItemClickListener(new MyCertifyChallengeAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int pos) {
-                // 챌린지 정보로 이동.
+                // 챌린지 상세 정보로 이동.
+                Intent intent = new Intent(mainActivity, HowCertifyActivity.class);
+                startActivity(intent);
+                mainActivity.finish();
             }
         });
 
