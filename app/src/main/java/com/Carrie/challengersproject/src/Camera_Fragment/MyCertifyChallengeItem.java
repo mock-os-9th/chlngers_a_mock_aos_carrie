@@ -7,13 +7,15 @@ public class MyCertifyChallengeItem {
     String viewName;
     String possibleTime;
     String achivementRate;
+    boolean ISCertiFied;
 
-    public MyCertifyChallengeItem(String title, String period, String viewName, String possibleTime, String achivementRate) {
+    public MyCertifyChallengeItem(String title, String period, String viewName, String possibleTime, String achivementRate,boolean ISCertiFied) {
         this.title = title;
         this.period = period;
         this.viewName = viewName;
         this.possibleTime = possibleTime;
         this.achivementRate = achivementRate;
+        this.ISCertiFied = ISCertiFied;
     }
 
     public String getTitle() {
@@ -54,5 +56,13 @@ public class MyCertifyChallengeItem {
 
     public void setAchivementRate(String achivementRate) {
         this.achivementRate = achivementRate;
+    }
+
+    public boolean getISCertiFied() {
+        return ISCertiFied;
+    }
+
+    public void setISCertiFied(boolean ISCertiFied) {
+        this.ISCertiFied = ISCertiFied;
     }
 }

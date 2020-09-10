@@ -2,7 +2,9 @@ package com.Carrie.challengersproject.src.Camera_Fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,8 @@ import com.Carrie.challengersproject.src.Main.after_login.a_MainActivity;
 
 import java.util.ArrayList;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class CameraFragment extends Fragment implements MyCertifyView {
     ViewGroup viewGroup;
     a_MainActivity mainActivity;
@@ -30,17 +34,27 @@ public class CameraFragment extends Fragment implements MyCertifyView {
     TextView tv_possible_certify;
     TextView tv_all;
 
-
     RecyclerView recyclerView;
     MyCertifyChallengeAdapter myCertifyChallengeAdapter;
     ArrayList mArrayList;
 
     final MyCertifyService myCertifyService = new MyCertifyService(this);
 
+    int got_challenge_id;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mainActivity = (a_MainActivity) getActivity();
+
+        //  이 값으로 해당 챌린지 아이디 값에 맞는 곳의 이미지 파일 위 텍스트 값을 바꾸어 주려고 함 (예정)
+        SharedPreferences sp = mainActivity.getSharedPreferences("TEMPLATE_APP", MODE_PRIVATE);
+        got_challenge_id = sp.getInt("ChallengeID",-1);
+        Log.d(" 챌린지 아이디 카메라",String.valueOf(got_challenge_id));
+
+        SharedPreferences.Editor editor = sp.edit();
+        editor.remove("ChallengeID");
+        editor.commit();
     }
 
     @Override
@@ -104,6 +118,7 @@ public class CameraFragment extends Fragment implements MyCertifyView {
     public void MyCertifySuccess(final MyCertifyResponse myCertifyResponse) {
 
         String t_title, p_period, v_viewname, p_possibletime, a_achievementrate;
+        boolean b_boolean;
 
         for(int i = 0; i< myCertifyResponse.getPossibleCertificationResult().size(); i++)
         {
@@ -113,7 +128,17 @@ public class CameraFragment extends Fragment implements MyCertifyView {
             p_possibletime = myCertifyResponse.getPossibleCertificationResult().get(i).getPossibleTime();
             a_achievementrate = myCertifyResponse.getPossibleCertificationResult().get(i).getAchievementRate();
 
-            MyCertifyChallengeItem myCertifyChallengeItem = new MyCertifyChallengeItem(t_title,p_period,v_viewname,p_possibletime,a_achievementrate);
+            if( myCertifyResponse.getPossibleCertificationResult().get(i).getChallengeId() == got_challenge_id)
+            {
+                b_boolean=true;
+            }
+            else { b_boolean= false; }
+
+            Log.d("챌린지 넘어온 거",String.valueOf(got_challenge_id));
+            Log.d("챌린지 값",String.valueOf( myCertifyResponse.getPossibleCertificationResult().get(i).getChallengeId()));
+            Log.d("투루펄스",String.valueOf(b_boolean));
+
+            MyCertifyChallengeItem myCertifyChallengeItem = new MyCertifyChallengeItem(t_title,p_period,v_viewname,p_possibletime,a_achievementrate,b_boolean);
             mArrayList.add(myCertifyChallengeItem);
         }
 

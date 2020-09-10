@@ -22,6 +22,7 @@ import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.Camera_Fragment.MyCertifyService;
 import com.Carrie.challengersproject.src.Camera_Fragment.interfaces.MyCertifyView;
 import com.Carrie.challengersproject.src.Camera_Fragment.models.MyCertifyResponse;
+import com.Carrie.challengersproject.src.CertifiyFinish.CertifyFinishActivity;
 import com.Carrie.challengersproject.src.HowCertify.interfaces.HowCertifyView;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
@@ -39,13 +40,10 @@ import java.util.Date;
 public class HowCertifyActivity extends AppCompatActivity implements HowCertifyView {
 
     final HowCertifyService howCertifyService = new HowCertifyService(this);
-
-
-    Intent intent= getIntent();
-    int challenge_ID = intent.getIntExtra("CHALLENGE_ID",0);
-
+    int challenge_ID;
     private File tempFile;
     private static final int PICK_FROM_CAMERA = 2;
+    String photo_url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +51,10 @@ public class HowCertifyActivity extends AppCompatActivity implements HowCertifyV
         setContentView(R.layout.activity_how_certify);
 
         tedPermission(); // 권한 요청 실패 OR 성공
+
+        Intent intent= getIntent();
+        challenge_ID = intent.getIntExtra("CHALLENGE_ID",0);
+
 
         TextView camera_btn = findViewById(R.id.how_certify_tv_btn_camera);
         camera_btn.setOnClickListener(new View.OnClickListener() {
@@ -161,7 +163,8 @@ public class HowCertifyActivity extends AppCompatActivity implements HowCertifyV
         Bitmap originalBm = BitmapFactory.decodeFile(tempFile.getAbsolutePath(), options);
         Log.d("파일 절대 경로",tempFile.getAbsolutePath()); // 이 정보를 바탕으로 나중에 이미지 뷰에 set 하니까.
 
-        tryPostCertifyTest(challenge_ID,tempFile.getAbsolutePath());
+        photo_url = tempFile.getAbsolutePath();
+        tryPostCertifyTest(challenge_ID,photo_url);
 
 
         //     예제
@@ -179,6 +182,12 @@ public class HowCertifyActivity extends AppCompatActivity implements HowCertifyV
     @Override
     public void HowCertifySuccess(String text) {
         // 성공시 이미지 뷰에 띄우는 것과 확인 버튼있는 액티비티로.
+        Intent intent = new Intent(HowCertifyActivity.this, CertifyFinishActivity.class);
+        Log.d("챌린지 아이디 하우",String.valueOf(challenge_ID));
+        intent.putExtra("CHALLENGE_ID",challenge_ID);
+        intent.putExtra("PHOTO_URL",photo_url);
+        startActivity(intent);
+        finish();
 
     }
 

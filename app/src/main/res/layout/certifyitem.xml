@@ -68,7 +68,7 @@
 
        </LinearLayout>
 
-       <ImageButton
+       <ImageView
            android:id="@+id/certify_item_btn_certify"
            android:layout_gravity="center"
            android:layout_weight="7"

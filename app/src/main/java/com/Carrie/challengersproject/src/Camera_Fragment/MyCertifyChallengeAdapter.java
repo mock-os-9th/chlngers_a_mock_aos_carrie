@@ -1,10 +1,12 @@
 package com.Carrie.challengersproject.src.Camera_Fragment;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +20,8 @@ public class MyCertifyChallengeAdapter extends RecyclerView.Adapter<MyCertifyCha
 
     private ArrayList<MyCertifyChallengeItem> mList;
     Context context;
+
+
 
     // 리스너 인터페이스 정의하기
     public interface OnItemClickListener
@@ -40,7 +44,7 @@ public class MyCertifyChallengeAdapter extends RecyclerView.Adapter<MyCertifyCha
         protected TextView VIEWNAME;
         protected TextView POSSIBLETIME;
         protected TextView ACHIEVEMENTRATE;
-        protected ImageButton CERTIFY_BTN;
+        protected ImageView CERTIFY_BTN;
 
         public MyCertify_ViewHolder(View view)
         {
@@ -95,12 +99,23 @@ public class MyCertifyChallengeAdapter extends RecyclerView.Adapter<MyCertifyCha
     @Override
     public void onBindViewHolder(@NonNull MyCertify_ViewHolder holder, int position) {
 
+        Drawable drawable_done = context.getResources().getDrawable(R.drawable.certifydone);
+        Drawable drawable = context.getResources().getDrawable(R.drawable.certify_selector);
+
         holder.TITLE.setText(mList.get(position).getTitle());
         holder.PERIOD.setText(mList.get(position).getPeriod());
         holder.VIEWNAME.setText(mList.get(position).getViewName());
         holder.POSSIBLETIME.setText(mList.get(position).getPossibleTime());
         holder.ACHIEVEMENTRATE.setText(mList.get(position).getAchivementRate());
 
+        if(mList.get(position).getISCertiFied() == true )
+        {
+            holder.CERTIFY_BTN.setImageDrawable(drawable_done);
+        }
+        else
+        {
+            holder.CERTIFY_BTN.setImageDrawable(drawable);
+        }
     }
 
     @Override

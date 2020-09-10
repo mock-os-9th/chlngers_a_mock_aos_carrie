@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -81,10 +83,22 @@ public class a_MainActivity extends BaseActivity  {
         introduceFragment = new IntroduceFragment();
         imageChangeFragment = new ImageChangeFragment();
 
+        SharedPreferences sp = getSharedPreferences("TEMPLATE_APP", MODE_PRIVATE);
+        int got_challenge_id = sp.getInt("ChallengeID",-1);
 
-        // 제일 처음 띄어줄 뷰 세팅
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.activity_a_fl,searchFragment).commitAllowingStateLoss();
+        Log.d("챌린지 아이디 메인_",String.valueOf(got_challenge_id));
+        if(got_challenge_id != -1)
+        {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.activity_a_fl,cameraFragment).commitAllowingStateLoss();
+        }
+        else {
+            // 제일 처음 띄어줄 뷰 세팅
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.activity_a_fl,searchFragment).commitAllowingStateLoss();
+        }
+
+
 
         // 아이콘 선택시 원하는 프레그먼트 띄우기 - 리스너 추가
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
