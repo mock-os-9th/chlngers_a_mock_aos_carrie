@@ -10,7 +10,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_width="280dp"
         android:layout_height="35dp"
         android:hint="@string/search_what_do_you_want_habit"
@@ -22,10 +22,11 @@
         android:background="@color/colorGrayPressed"/>
     <ImageButton
         app:layout_constraintTop_toTopOf="@id/search_fm_et_search"
+        app:layout_constraintBottom_toBottomOf="@id/search_fm_et_search"
         app:layout_constraintRight_toLeftOf="@id/search_fm_ib_notification"
         app:layout_constraintLeft_toRightOf="@id/search_fm_et_search"
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_width="26dp"
+        android:layout_height="25dp"
         android:scaleType="fitXY"
 
         android:tint="@color/colorGray"
@@ -35,10 +36,11 @@
     <ImageButton
         android:id="@+id/search_fm_ib_notification"
         app:layout_constraintTop_toTopOf="@+id/search_fm_et_search"
+        app:layout_constraintBottom_toBottomOf="@id/search_fm_et_search"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="10dp"
-        android:layout_width="35dp"
-        android:layout_height="30dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="26dp"
+        android:layout_height="25dp"
         android:scaleType="fitXY"
         android:tint="@color/colorGray"
         app:srcCompat="@drawable/ic_notifications_none_black_24dp"
@@ -46,27 +48,19 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@id/search_fm_et_search">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <View
-                android:id="@+id/search_fm_empty_1"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="@color/colorAccent"/>
-
             <TextView
                 android:id="@+id/search_fm_tv_nick_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/mypage_nickname"
                 android:textColor="@color/colorBlack"
-                app:layout_constraintTop_toBottomOf="@id/search_fm_empty_1"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginLeft="10dp"
                 android:textSize="16sp"
@@ -174,16 +168,167 @@
             </ScrollView>
 
             <TextView
-                android:id="@+id/search_fm_tv_study_title"
+                android:id="@+id/search_fm_popular_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/search_fm_scroll_2"
                 app:layout_constraintLeft_toLeftOf="@+id/search_fm_tv_nick_name"
+                android:layout_marginTop="30dp"
+                android:text="인기 챌린지"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"/>
+            <TextView
+                android:id="@+id/search_fm_tv_popular_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="@+id/search_fm_tv_show_all"
+                app:layout_constraintBottom_toBottomOf="@id/search_fm_popular_title"
+                android:text="더보기"
+                android:textSize="11sp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/search_fm_tv_popular_explain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_popular_title"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_popular_title"
+                android:text="가장 인기있는 챌린지를 확인하세요!"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="3dp"/>
+
+            <info.hoang8f.android.segmented.SegmentedGroup
+                android:id="@+id/search_fm_segmentedgroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_tv_popular_explain"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                app:sc_tint_color="@color/colorBlack"
+                app:sc_corner_radius="70dp"
+                app:layout_constraintRight_toRightOf="parent">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="여자"
+                    android:checked="true"
+                    style="@style/RadioButton"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="남자"
+                    style="@style/RadioButton"/>
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+            <View
+                android:id="@+id/search_fm_line01"
+                android:layout_width="400dp"
+                android:layout_height="1dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@color/colorGrayPressed"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_segmentedgroup"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/search_fm_10s"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="10대"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_line01"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/search_fm_10s_line"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_10s"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_10s"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/search_fm_20s"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="20대"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@id/search_fm_10s"
+                app:layout_constraintLeft_toRightOf="@id/search_fm_10s"/>
+
+            <TextView
+                android:id="@+id/search_fm_20s_line"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:background="@color/colorGrayPressed"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_20s"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_20s"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/search_fm_30s"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="30대"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@id/search_fm_10s"
+                app:layout_constraintLeft_toRightOf="@id/search_fm_20s"/>
+
+            <TextView
+                android:id="@+id/search_fm_30s_line"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:background="@color/colorGrayPressed"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_30s"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_30s"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/search_fm_40s"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="40대"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@id/search_fm_10s"
+                app:layout_constraintLeft_toRightOf="@id/search_fm_30s"/>
+
+            <TextView
+                android:id="@+id/search_fm_40s_line"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:background="@color/colorGrayPressed"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_40s"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_40s"
+                android:layout_marginTop="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_fm_recyclerview_popular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_40s_line"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:id="@+id/search_fm_tv_study_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:text="공부 챌린지"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/colorBlack"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_recyclerview_popular"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_tv_nick_name"/>
 
             <TextView
                 android:id="@+id/search_fm_tv_study_more"
@@ -218,14 +363,39 @@
                     android:layout_height="wrap_content" />
             </ScrollView>
 
+            <TextView
+                android:id="@+id/search_fm_circle_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="목표  시작할 준비 되셨나요?"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_scroll_3"
+                app:layout_constraintLeft_toLeftOf="@id/search_fm_tv_nick_name"/>
+
+            <ScrollView
+                android:id="@+id/search_fm_scroll_circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/search_fm_circle_title"
+                android:layout_marginTop="10dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/search_fm_recyclerview_circle_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+
+
 
             <TextView
                 android:id="@+id/search_fm_tv_know_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/search_fm_scroll_3"
+                app:layout_constraintTop_toBottomOf="@+id/search_fm_scroll_circle"
                 app:layout_constraintLeft_toLeftOf="@+id/search_fm_tv_nick_name"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="35dp"
                 android:text="지식 역량 챌린지"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -266,13 +436,11 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="100dp"
+                android:background="@color/colorAccent"
                 app:layout_constraintTop_toBottomOf="@id/search_fm_scroll_4"/>
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </ScrollView>
 
 

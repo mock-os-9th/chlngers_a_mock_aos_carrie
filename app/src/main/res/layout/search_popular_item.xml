@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/popular_item_num"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:text="1" />
+
+        <FrameLayout
+            android:layout_marginLeft="2dp"
+            android:layout_weight="3"
+            android:layout_width="40dp"
+            android:layout_height="70dp">
+            <ImageView
+                android:id="@+id/popular_item_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/b_certify"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:text="내일 마감"
+                android:gravity="top|left"
+                android:textSize="6sp"
+                android:textStyle="bold"
+                android:background="@color/colorPrimary"
+                android:padding="2dp"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/bookmark_selector"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"
+                />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_weight="8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/popular_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:text ="미라클 모닝 | 아침 6시 일어나기"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/popular_item_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_star_black_24dp"
+                    android:text="4.34"/>
+                <TextView
+                    android:id="@+id/popular_item_now_people_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorGray"
+                    android:layout_marginLeft="10dp"
+                    android:text="현재 1,563명 신청"/>
+            </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:id="@+id/popular_item_period"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="08/31/월 - 09/11/금"
+                   android:textSize="9sp"
+                   android:background="@color/colorGrayPressed"
+                   android:textColor="@color/colorGray"
+                   android:padding="2dp"/>
+
+
+               <TextView
+                   android:id="@+id/popular_item_week"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="2주"
+                   android:layout_marginLeft="3dp"
+                   android:textSize="9sp"
+                   android:background="@color/colorGrayPressed"
+                   android:textColor="@color/colorGray"
+                   android:padding="2dp"/>
+
+               <TextView
+                   android:id="@+id/popular_item_days"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="주 5일"
+                   android:textSize="9sp"
+                   android:layout_marginLeft="3dp"
+                   android:background="@color/colorGrayPressed"
+                   android:textColor="@color/colorGray"
+                   android:padding="2dp"/>
+           </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

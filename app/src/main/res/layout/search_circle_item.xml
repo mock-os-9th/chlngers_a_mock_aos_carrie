@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_item_iv"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/dummy_img" />
+
+        <TextView
+            android:id="@+id/circle_item_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="건강/발전"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"/>
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.Carrie.challengersproject.src.Search_Fragment;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,6 +75,8 @@ public class Challenge_Adapter extends RecyclerView.Adapter<Challenge_Adapter.Ch
                 @Override
                 public void onClick(View v) {
                     // 북마크 처리
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.a_bookmark);
+                    CHECK_BOOKMARK.setImageDrawable(drawable);
                 }
             });
         }

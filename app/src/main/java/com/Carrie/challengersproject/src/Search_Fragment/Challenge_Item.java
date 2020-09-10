@@ -9,8 +9,9 @@ public class Challenge_Item {
     private String Duration;
     private String Cycle;
 
+    private int Num;
 
-    public Challenge_Item(String img_url, String title, String star, String now_people, String date, String duration, String cycle) {
+    public Challenge_Item(String img_url, String title, String star, String now_people, String date, String duration, String cycle, int num) {
         Img_url = img_url;
         Title = title;
         Star = star;
@@ -18,6 +19,7 @@ public class Challenge_Item {
         Date = date;
         Duration = duration;
         Cycle = cycle;
+        Num = num;
     }
 
     public String getImg_url() {
@@ -74,5 +76,13 @@ public class Challenge_Item {
 
     public void setCycle(String cycle) {
         Cycle = cycle;
+    }
+
+    public int getNum() {
+        return Num;
+    }
+
+    public void setNum(int num) {
+        Num = num;
     }
 }

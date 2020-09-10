@@ -85,4 +85,7 @@ dependencies {
     // for permition from user
     implementation 'gun0912.ted:tedpermission:2.1.0'
 
+    //
+    implementation 'info.hoang8f:android-segmented:1.0.6'
+
 }
