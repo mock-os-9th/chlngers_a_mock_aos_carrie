@@ -101,7 +101,7 @@ public class CameraFragment extends Fragment implements MyCertifyView {
     }
 
     @Override
-    public void MyCertifySuccess(MyCertifyResponse myCertifyResponse) {
+    public void MyCertifySuccess(final MyCertifyResponse myCertifyResponse) {
 
         String t_title, p_period, v_viewname, p_possibletime, a_achievementrate;
 
@@ -123,8 +123,10 @@ public class CameraFragment extends Fragment implements MyCertifyView {
         myCertifyChallengeAdapter.setOnItemClickListener(new MyCertifyChallengeAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int pos) {
+                int challenge_id = myCertifyResponse.getPossibleCertificationResult().get(pos).getChallengeId();
                 // 챌린지 상세 정보로 이동.
                 Intent intent = new Intent(mainActivity, HowCertifyActivity.class);
+                intent.putExtra("CHALLENGE_ID",challenge_id);
                 startActivity(intent);
                 mainActivity.finish();
             }

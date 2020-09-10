@@ -20,7 +20,7 @@ public class MyCertifyService {
         this.myCertifyView = myCertifyView;
     }
 
-    void getCertifyTest() {
+    public void getCertifyTest() {
         final MyCertifyRetrofitInterface myCertifyRetrofitInterface = getRetrofit().create(MyCertifyRetrofitInterface.class);
         myCertifyRetrofitInterface.getMyCertifyTest().enqueue(new Callback<MyCertifyResponse>() {
 

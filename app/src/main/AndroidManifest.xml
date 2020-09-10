@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -18,9 +19,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".src.HowCertify.HowCertifyActivity"></activity>
-        <activity android:name=".src.Payment.PaymentActivity"></activity>
-        <activity android:name=".src.Detail_Challenge.Detail_Challenge"></activity>
+        <activity android:name=".src.CertifiyFinish.CertifyFinishActivity"></activity>
+        <activity android:name=".src.HowCertify.HowCertifyActivity" />
+        <activity android:name=".src.Payment.PaymentActivity" />
+        <activity android:name=".src.Detail_Challenge.Detail_Challenge" />
         <activity android:name=".src.reset_pw.ResetPwActivity" />
         <activity android:name=".src.find_email.FindEmailActivity" /> <!-- 페이스북 메타 데이터 -->
         <meta-data

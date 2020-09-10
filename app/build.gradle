@@ -82,5 +82,7 @@ dependencies {
     // https://github.com/square/retrofit/tree/master/retrofit-converters/gson
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 
+    // for permition from user
+    implementation 'gun0912.ted:tedpermission:2.1.0'
 
 }
