@@ -1,11 +1,16 @@
 package com.Carrie.challengersproject.src.ProfileImgChange_Fragment;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +26,11 @@ import androidx.fragment.app.Fragment;
 import com.Carrie.challengersproject.R;
 import com.Carrie.challengersproject.src.Main.after_login.a_MainActivity;
 import com.Carrie.challengersproject.src.ProfileImgChange_Fragment.interfaces.ImageChangeView;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
+
+import java.io.File;
+import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -31,7 +41,8 @@ public class ImageChangeFragment extends Fragment implements ImageChangeView {
     boolean Img_Changed = false;
     ImageView profile_img;
     TextView confirm_btn;
-    private final int GET_GALLERY_IMAGE = 200;
+    private final int PICK_FROM_ALBUM = 1;
+    private File tempFile;
     Uri selectedImageUri;
 
     final ImageChangeService imageChangeService = new ImageChangeService(this);
@@ -97,22 +108,18 @@ public class ImageChangeFragment extends Fragment implements ImageChangeView {
             @Override
             public void onClick(View v) {
                 // 통신
-                tryPatchChangeProfileImg("https://cdn.now.howstuffworks.com/media-content/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg");
+                tryPatchChangeProfileImg("https://i.pinimg.com/564x/c7/fc/b0/c7fcb078cd1f4b46ba2edfc362cd1eec.jpg");
             }
         });
 
-
+        tedPermission();
         // 사진첩 버튼 -> 사진첩으로 접근
         Button go_album_btn = viewGroup.findViewById(R.id.change_profileimg_btn_photo_album);
         go_album_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                // 기기 기본 갤러리 접근
-                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
-                intent.setType("image/*");
-                // 구글 갤러리 접근
-                startActivityForResult(intent,GET_GALLERY_IMAGE);
+               gotoAlbum();
+                //사진 첩에서 가져오기
             }
         });
 
@@ -120,51 +127,67 @@ public class ImageChangeFragment extends Fragment implements ImageChangeView {
     }
 
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode,resultCode,data);
-
-//        if (resultCode == RESULT_OK)
-//        {
-//            if(requestCode == GET_GALLERY_IMAGE)
-//            {
-//                Uri selectedImageUri = data.getData();
-//                if(selectedImageUri != null)
-//                {
-//                    Uri destinationUri =Uri.fromFile(File(cacheDir,"cropped"));
-//                }
-//            }else if(requestCode == Ucrop.REQUEST_CROP)
-//            {
-//                Uri resultUri = Ucrop.getOutput(data.getData());
-//                if(resultUri != null)
-//                {
-//                    profile_img.setImageDrawable(null);
-//                }
-//            }
-//            try {
-//                InputStream in = getContentResolver().openInputStream(data.getData());
-//                Bitmap img = BitmapFactory.decodeStream(in);
-//                in.close();
-//                profile_img.setImageBitmap(img);
-//                Img_Changed = true;
-//            }catch(Exception e)
-//            {e.printStackTrace();}
-        if (requestCode == GET_GALLERY_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-
-            selectedImageUri = data.getData();
-            // Uri 스키마를 content:/// 에서 file:///로 변경
-
-            Log.d("Uri",String.valueOf(selectedImageUri));
-            profile_img.setImageURI(selectedImageUri);
-            Img_Changed = true;
-        }
-
-            if(Img_Changed)
-            {
-                confirm_btn.setText("확인");
+    private void tedPermission()
+    {
+        PermissionListener permissionListener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                // 권한 요청 성공
             }
 
+            @Override
+            public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+                // 권한 요청 실패
+            }
+        };
+        TedPermission.with(mainActivity)
+                .setPermissionListener(permissionListener)
+                .setRationaleMessage(getResources().getString(R.string.permission_2))
+                .setRationaleMessage(getResources().getString(R.string.permission_1))
+                .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA)
+                .check();
     }
+
+    private void gotoAlbum()
+    {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+        startActivityForResult(intent,PICK_FROM_ALBUM);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == PICK_FROM_ALBUM)
+        {
+            Uri photoUri = data.getData();
+            Cursor cursor = null;
+            try {
+                String[] proj = {MediaStore.Images.Media.DATA};
+                assert photoUri != null;
+                cursor = mainActivity.getContentResolver().query(photoUri,proj,null,null,null);
+
+                assert cursor != null;
+                int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+
+                cursor.moveToFirst();
+                tempFile = new File(cursor.getString(column_index));
+            }finally {
+                if(cursor!= null){
+                    cursor.close();
+                }
+            }
+            setImage();
+            confirm_btn.setText("확인");
+        }
+    }
+
+    private void setImage()
+    {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        Bitmap orginalBm = BitmapFactory.decodeFile(tempFile.getAbsolutePath(),options);
+        profile_img.setImageBitmap(orginalBm);
+    }
+
 
     private void tryPatchChangeProfileImg(String url)
     {
@@ -180,5 +203,6 @@ public class ImageChangeFragment extends Fragment implements ImageChangeView {
     @Override
     public void ImageChangeFailure(String message) {
         Log.e("프로필 사진 변경 실패",message);
+        mainActivity.onChangeFragment(7);
     }
 }
