@@ -23,4 +23,540 @@
         android:drawablePadding="10dp"
         android:background="@color/colorGrayPressed"/>
 
+    <TextView
+        android:id="@+id/new_fm_line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_edittext"
+        android:background="@color/colorGrayPressed"/>
+
+    <TextView
+        android:id="@+id/new_fm_tv_my_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_line1"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_edittext"
+        android:text="#나의 관심 분야"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_tv_my_favorite_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="편집"
+        app:layout_constraintRight_toRightOf="@id/new_fm_edittext"
+        app:layout_constraintBottom_toBottomOf="@id/new_fm_tv_my_favorite"
+        android:textColor="@color/colorGray"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/new_fm_favorite_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#매일반복"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_tv_my_favorite"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_tv_my_favorite"
+        android:textColor="@color/colorBlack"
+        android:background="@drawable/a_background_button_round_gray"
+        android:padding="10dp"
+        />
+    <TextView
+        android:id="@+id/new_fm_favorite_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#건강/운동"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/new_fm_favorite_1"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_favorite_1"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/a_background_button_round_gray"
+        android:padding="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#공부"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/new_fm_favorite_2"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_favorite_2"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/a_background_button_round_gray"
+        android:padding="10dp"
+        />
+
+    <TextView
+        android:id="@+id/new_fm_tv_wake_early"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# 일찍 일어나기"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_tv_my_favorite"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_favorite_2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@id/new_fm_tv_my_favorite_edit"
+        app:layout_constraintBottom_toBottomOf="@id/new_fm_tv_wake_early"
+        android:text="더보기"
+        android:textColor="@color/colorGray"
+        android:textSize="12sp"/>
+
+    <FrameLayout
+        android:id="@+id/new_fm_fl_wake_early_left"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_tv_wake_early"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_tv_wake_early"
+        android:layout_marginTop="15dp"
+        android:layout_width="160dp"
+        android:background="@drawable/dummy_img"
+        android:layout_height="160dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="모집 마감 D-2"
+            android:background="@color/colorPrimary"
+            android:textSize="8sp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:padding="5dp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/b_bookmark"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/new_fm_fl_wake_early_right"
+        app:layout_constraintRight_toRightOf="@id/new_fm_tv_my_favorite_edit"
+        app:layout_constraintTop_toTopOf="@id/new_fm_fl_wake_early_left"
+        android:layout_width="160dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/circle_dum2"
+        android:layout_height="160dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="모집 마감 D-2"
+            android:background="@color/colorPrimary"
+            android:textSize="8sp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:padding="5dp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/b_bookmark"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/new_fm_early_right_title"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="[제발후회없게] 아침 5시에 일어나기!"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_fl_wake_early_right"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_fl_wake_early_right"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_ealry_right_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_star_black_24dp"
+        android:text="0"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_early_right_title"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_early_right_title"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_ealry_right_star"
+        app:layout_constraintTop_toTopOf="@id/new_fm_ealry_right_star"
+        android:text="현재 1명 신청"
+        android:textColor="@color/colorGray"
+        android:layout_marginLeft="10dp"
+        android:textSize="9sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/new_fm_ealry_right_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09/15/화 - 09/29/화"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_ealry_right_star"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_ealry_right_star"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_ealry_right_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2주"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_ealry_right_star"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_ealry_right_period"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_ealry_right_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주 3일"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_ealry_right_star"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_ealry_right_week"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_early_left_title"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="[하요이요] 아침 7시에 일어나기"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_fl_wake_early_left"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_fl_wake_early_left"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_ealry_left_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_star_black_24dp"
+        android:text="0"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_early_left_title"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_early_left_title"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_ealry_left_star"
+        app:layout_constraintTop_toTopOf="@id/new_fm_ealry_left_star"
+        android:text="현재 15명 신청"
+        android:textColor="@color/colorGray"
+        android:layout_marginLeft="10dp"
+        android:textSize="9sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/new_fm_ealry_left_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09/14/월 - 09/28/월"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_ealry_left_star"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_ealry_left_star"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_ealry_left_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2주"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_ealry_left_star"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_ealry_left_period"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_ealry_left_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주 3일"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_ealry_left_star"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_ealry_left_week"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"/>
+
+
+
+
+
+    <TextView
+        android:id="@+id/new_fm_tv_exercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# 운동"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_tv_my_favorite"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_ealry_left_days"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@id/new_fm_tv_my_favorite_edit"
+        app:layout_constraintBottom_toBottomOf="@id/new_fm_tv_exercise"
+        android:text="더보기"
+        android:textColor="@color/colorGray"
+        android:textSize="12sp"/>
+
+    <FrameLayout
+        android:id="@+id/new_fm_fl_exercise_left"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_tv_exercise"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_tv_exercise"
+        android:layout_marginTop="15dp"
+        android:layout_width="160dp"
+        android:background="@drawable/circle_dum3"
+        android:layout_height="160dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="모집 마감 D-2"
+            android:background="@color/colorPrimary"
+            android:textSize="8sp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:padding="5dp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/b_bookmark"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/new_fm_exercise_right"
+        app:layout_constraintRight_toRightOf="@id/new_fm_exercise_more"
+        app:layout_constraintTop_toTopOf="@id/new_fm_fl_exercise_left"
+        android:layout_width="160dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/circle_dum4"
+        android:layout_height="160dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="모집 마감 D-2"
+            android:background="@color/colorPrimary"
+            android:textSize="8sp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:padding="5dp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/b_bookmark"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/new_exercise_right_title"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="60층 계단 오르기"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_exercise_right"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_exercise_right"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_right_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_star_black_24dp"
+        android:text="0"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@id/new_exercise_right_title"
+        app:layout_constraintLeft_toLeftOf="@id/new_exercise_right_title"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_exercise_right_star"
+        app:layout_constraintTop_toTopOf="@id/new_fm_exercise_right_star"
+        android:text="현재 1명 신청"
+        android:textColor="@color/colorGray"
+        android:layout_marginLeft="10dp"
+        android:textSize="9sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_right_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09/15/화 - 09/29/화"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_exercise_right_star"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_exercise_right_star"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_right_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2주"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_exercise_right_star"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_exercise_right_period"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_right_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주 3일"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_exercise_right_star"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_exercise_right_week"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_left_title"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="아침 스트레칭 + 저녁 운동"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_fl_exercise_left"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_fl_exercise_left"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_left_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_star_black_24dp"
+        android:text="0"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_exercise_left_title"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_exercise_left_title"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_exercise_left_star"
+        app:layout_constraintTop_toTopOf="@id/new_fm_exercise_left_star"
+        android:text="현재 15명 신청"
+        android:textColor="@color/colorGray"
+        android:layout_marginLeft="10dp"
+        android:textSize="9sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_left_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09/14/월 - 09/28/월"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_exercise_left_star"
+        app:layout_constraintLeft_toLeftOf="@id/new_fm_exercise_left_star"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_left_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2주"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_exercise_left_star"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_exercise_left_period"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/new_fm_exercise_left_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주 3일"
+        android:textColor="@color/colorGray"
+        android:background="@color/colorGrayPressed"
+        app:layout_constraintTop_toBottomOf="@id/new_fm_exercise_left_star"
+        app:layout_constraintLeft_toRightOf="@id/new_fm_exercise_left_week"
+        android:layout_marginTop="10dp"
+        android:textSize="6sp"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"/>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
