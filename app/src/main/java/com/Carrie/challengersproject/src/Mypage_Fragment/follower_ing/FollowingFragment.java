@@ -55,14 +55,16 @@ public class FollowingFragment extends Fragment {
 
         mArrayList = new ArrayList<>();
         //dummy
-        for(int i = 0; i<3; i++)
-        {
-            Follow_ing_Item follow_ing_item = new Follow_ing_Item("https://cdn.pixabay.com/photo/2016/10/09/15/21/business-man-1725976_960_720.png","가나다");
-            Follow_ing_Item follow_ing_item2 = new Follow_ing_Item("https://imagescdn.gettyimagesbank.com/500/201806/jv11157747.jpg","라마바");
 
-            mArrayList.add(follow_ing_item);
-            mArrayList.add(follow_ing_item2);
-        }
+        Follow_ing_Item follow_ing_item = new Follow_ing_Item("https://cdn.pixabay.com/photo/2016/10/09/15/21/business-man-1725976_960_720.png","aa");
+        Follow_ing_Item follow_ing_item2 = new Follow_ing_Item("https://imagescdn.gettyimagesbank.com/500/201806/jv11157747.jpg","랄라");
+        Follow_ing_Item follow_ing_item3 = new Follow_ing_Item("https://dimg.donga.com/wps/NEWS/IMAGE/2018/02/23/88808774.1.jpg","무민");
+
+       mArrayList.add(follow_ing_item);
+        mArrayList.add(follow_ing_item2);
+        mArrayList.add(follow_ing_item3);
+
+
 
         mAdapter = new Follow_ing_Adapter(mArrayList);
         recyclerView.setAdapter(mAdapter);

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -211,8 +212,14 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
     public void MyPageGetSuccess(MypageResponse mypageResponse) {
 
         // 아래 내용들 리스폰스에서 받아 온 값으로 넣어주기
-        String img_url = mypageResponse.getMyPageInfo().getProfileImageUrl();
-        if (img_url.startsWith("h")) {
+        String img_url ="";
+        img_url += mypageResponse.getMyPageInfo().getProfileImageUrl();
+
+        if(img_url.isEmpty())
+        {
+            Drawable drawable = getResources().getDrawable(R.drawable.profile80);
+            profileImg.setImageDrawable(drawable);
+        }else if (img_url.startsWith("h")) {
             Glide.with(this).load(img_url).apply(new RequestOptions().circleCrop()).into(profileImg);
         } else {
             BitmapFactory.Options options = new BitmapFactory.Options();
