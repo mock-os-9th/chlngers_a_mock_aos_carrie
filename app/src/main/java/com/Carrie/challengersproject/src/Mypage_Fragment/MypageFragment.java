@@ -251,19 +251,12 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
 
         for(int i = 0; i<mypageResponse.getMyPageInfo().getEverydayRecords().size(); i++)
         {
-            int year, month, day;
-            year = Integer.parseInt(mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(0,3));
-            month = Integer.parseInt(mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(6,6));
-            if((mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(8,9)).startsWith("0"))
-            {
-                day = Integer.parseInt(mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(8,8));
-            }
-            else
-            {
-                day= Integer.parseInt(mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(8,9));
-            }
+            int day;
 
-            calendarView.setDateSelected(CalendarDay.from(year,month,day),true);
+            day= Integer.parseInt(mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(8,10));
+
+            Log.d("day",String.valueOf(day));
+            calendarView.setDateSelected(CalendarDay.from(2020,9,day),true);
         }
 
 //        calendarView.setDateSelected(CalendarDay.from(2020,9,8),true);

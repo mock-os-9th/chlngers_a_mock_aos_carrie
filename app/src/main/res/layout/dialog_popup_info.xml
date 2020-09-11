@@ -43,6 +43,7 @@
                 tools:text="@string/popupTitle_line2" />
         </LinearLayout>
         <ImageView
+            android:id="@+id/dialog_popup_info_iv"
             android:layout_marginLeft="60dp"
             android:layout_height="50dp"
             android:layout_width="50dp"
