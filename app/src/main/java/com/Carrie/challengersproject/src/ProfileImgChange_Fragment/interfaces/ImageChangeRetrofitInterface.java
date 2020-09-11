@@ -10,7 +10,7 @@ import retrofit2.http.PATCH;
 public interface ImageChangeRetrofitInterface {
 
 
-    @PATCH("user/profileImageUrl")
+    @PATCH("/user/image")
     Call<ImageChangeResponse> ChangeImgTest(@Body ImageChangeBody params);
 
 }

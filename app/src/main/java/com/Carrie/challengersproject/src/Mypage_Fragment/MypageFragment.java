@@ -33,8 +33,17 @@ import com.github.mikephil.charting.data.RadarData;
 import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.data.RadarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
+import sun.bob.mcalendarview.MCalendarView;
+import sun.bob.mcalendarview.MarkStyle;
+import sun.bob.mcalendarview.views.ExpCalendarView;
+import sun.bob.mcalendarview.vo.DateData;
 
 import static com.Carrie.challengersproject.ApplicationClass.sSharedPreferences;
 
@@ -53,7 +62,7 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
     TextView follower_count;
     TextView follwing_count;
     TextView interest_field;
-    CalendarView calendarView;
+    MaterialCalendarView calendarView;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -203,13 +212,11 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
 
         // 아래 내용들 리스폰스에서 받아 온 값으로 넣어주기
         String img_url = mypageResponse.getMyPageInfo().getProfileImageUrl();
-        if(img_url.startsWith("h"))
-        {
+        if (img_url.startsWith("h")) {
             Glide.with(this).load(img_url).apply(new RequestOptions().circleCrop()).into(profileImg);
-        }else
-        {
+        } else {
             BitmapFactory.Options options = new BitmapFactory.Options();
-            Bitmap originalBm = BitmapFactory.decodeFile(img_url,options);
+            Bitmap originalBm = BitmapFactory.decodeFile(img_url, options);
             profileImg.setImageBitmap(originalBm);
         }
 
@@ -218,8 +225,7 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
         nickname.setText(n_nickname);
 
         String level_color = mypageResponse.getMyPageInfo().getGradeName();
-        if(level_color.equals("Red"))
-        {
+        if (level_color.equals("Red")) {
             grade.setHighlightColor(Color.RED);
         }
 
@@ -233,18 +239,38 @@ public class MypageFragment extends Fragment implements MypageFragmentView {
         follwing_count.setText(fng_count);
 
         String total_field = "";
-        for(int i = 0; i<mypageResponse.getMyPageInfo().getInterestFields().size(); i++)
-        {
-            total_field+="#";
-            total_field+=mypageResponse.getMyPageInfo().getInterestFields().get(i);
-            total_field+=", ";
+        for (int i = 0; i < mypageResponse.getMyPageInfo().getInterestFields().size(); i++) {
+            total_field += "#";
+            total_field += mypageResponse.getMyPageInfo().getInterestFields().get(i);
+            total_field += ", ";
 
         }
-
         interest_field.setText(total_field);
 
+        calendarView.setSelectionMode(MaterialCalendarView.SELECTION_MODE_MULTIPLE);
 
-        // calendarView = viewGroup.findViewById(R.id.myPage_fragment_cv_calender);
+        for(int i = 0; i<mypageResponse.getMyPageInfo().getEverydayRecords().size(); i++)
+        {
+            int year, month, day;
+            year = Integer.parseInt(mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(0,3));
+            month = Integer.parseInt(mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(6,6));
+            if((mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(8,9)).startsWith("0"))
+            {
+                day = Integer.parseInt(mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(8,8));
+            }
+            else
+            {
+                day= Integer.parseInt(mypageResponse.getMyPageInfo().getEverydayRecords().get(i).substring(8,9));
+            }
+
+            calendarView.setDateSelected(CalendarDay.from(year,month,day),true);
+        }
+
+//        calendarView.setDateSelected(CalendarDay.from(2020,9,8),true);
+//        calendarView.setDateSelected(CalendarDay.from(2020,9,7),true);
+//        calendarView.setDateSelected(CalendarDay.from(2020,9,6),true);
+
+
     }
 
     @Override

@@ -19,7 +19,7 @@ public class SearchService {
         this.searchActivityView = searchActivityView;
     }
 
-    void getSearchTest() {
+    public void getSearchTest() {
         final SearchRetrofitInterface searchRetrofitInterface = getRetrofit().create(SearchRetrofitInterface.class);
         searchRetrofitInterface.getSearchTest().enqueue(new Callback<SearchResponse>() {
 

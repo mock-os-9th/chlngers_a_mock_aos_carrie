@@ -101,7 +101,7 @@
         android:textStyle="bold"
         android:textSize="15sp"
         android:layout_marginTop="35dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         app:layout_constraintLeft_toLeftOf="@id/new_fm_tv_my_favorite"
         app:layout_constraintTop_toBottomOf="@id/new_fm_favorite_2"/>
 
@@ -147,7 +147,7 @@
         app:layout_constraintRight_toRightOf="@id/new_fm_tv_my_favorite_edit"
         app:layout_constraintTop_toTopOf="@id/new_fm_fl_wake_early_left"
         android:layout_width="160dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="5dp"
         android:background="@drawable/circle_dum2"
         android:layout_height="160dp">
         <TextView
