@@ -47,6 +47,7 @@ import static com.Carrie.challengersproject.ApplicationClass.X_ACCESS_TOKEN;
 import static com.Carrie.challengersproject.ApplicationClass.sSharedPreferences;
 
 public class LoginActivity extends BaseActivity implements LoginActivityView {
+
     final LoginService loginService = new LoginService(this);
 
     private ImageButton back_btn;
@@ -200,6 +201,7 @@ public class LoginActivity extends BaseActivity implements LoginActivityView {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
+
         if(Session.getCurrentSession().handleActivityResult(requestCode,resultCode,data))
         {
             super.onActivityResult(requestCode,resultCode,data);

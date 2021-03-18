@@ -13,7 +13,9 @@ import com.Carrie.challengersproject.src.Main.before_login.b_MainActivity;
 
 
 public class splashActivity extends AppCompatActivity {
+
     boolean IsLogin = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

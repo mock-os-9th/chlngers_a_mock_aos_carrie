@@ -33,6 +33,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 // 로그인 되어 있을 때 넘어 오는 액티비티
 // 액티비티 넘어 올때 로딩 등 있다. base activity 추후에 상속
 public class a_MainActivity extends BaseActivity  {
+
     BottomNavigationView bottomNavigationView;
     SearchFragment searchFragment;
     CameraFragment cameraFragment;

@@ -13,7 +13,6 @@ import static com.Carrie.challengersproject.ApplicationClass.sSharedPreferences;
 
 public class XAccessTokenInterceptor implements Interceptor {
 
-
     @NotNull
     @Override
     public Response intercept(@NonNull final Interceptor.Chain chain) throws IOException {

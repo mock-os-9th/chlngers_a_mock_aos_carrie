@@ -137,7 +137,6 @@ public class CameraFragment extends Fragment implements MyCertifyView {
             Log.d("챌린지 넘어온 거",String.valueOf(got_challenge_id));
             Log.d("챌린지 값",String.valueOf( myCertifyResponse.getPossibleCertificationResult().get(i).getChallengeId()));
             Log.d("투루펄스",String.valueOf(b_boolean));
-
             MyCertifyChallengeItem myCertifyChallengeItem = new MyCertifyChallengeItem(t_title,p_period,v_viewname,p_possibletime,a_achievementrate,b_boolean);
             mArrayList.add(myCertifyChallengeItem);
         }
